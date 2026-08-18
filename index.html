@@ -899,6 +899,19 @@
         <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
+    <!-- Notificação Flutuante (Prova Social) -->
+    <div id="social-proof-toast" class="fixed bottom-6 left-6 z-50 flex items-center gap-4 bg-wine-dark border border-gold-DEFAULT/30 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.5)] opacity-0 translate-y-4 pointer-events-none transition-all duration-500 max-w-xs">
+        <div class="w-10 h-10 rounded-full bg-gold-DEFAULT/20 flex items-center justify-center text-gold-DEFAULT flex-shrink-0">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div>
+            <p class="text-white text-sm font-medium leading-tight">
+                <span id="toast-name" class="font-bold text-gold-light"></span> de <span id="toast-city"></span>
+            </p>
+            <p class="text-gray-400 text-xs mt-1">Acabou de agendar uma sessão</p>
+        </div>
+    </div>
+
     <!-- MODAL BIO IVELICE -->
     <div id="bioModal" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
         <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeBioModal()"></div>
@@ -1088,6 +1101,41 @@
 
                 updateCountdown(); // Call immediately to avoid initial jump
                 setInterval(updateCountdown, 1000);
+            }
+
+            // Social Proof Toast Logic
+            const toast = document.getElementById('social-proof-toast');
+            const toastName = document.getElementById('toast-name');
+            const toastCity = document.getElementById('toast-city');
+            
+            if (toast && toastName && toastCity) {
+                const names = ['Ana P.', 'Carlos M.', 'Fernanda L.', 'Roberto C.', 'Juliana S.', 'Camila T.', 'Tiago V.', 'Amanda R.', 'Diego F.'];
+                const cities = ['São Paulo, SP', 'Rio de Janeiro, RJ', 'Belo Horizonte, MG', 'Curitiba, PR', 'Brasília, DF', 'Salvador, BA', 'Porto Alegre, RS', 'Campinas, SP', 'Goiânia, GO'];
+                
+                function showToast() {
+                    const randomName = names[Math.floor(Math.random() * names.length)];
+                    const randomCity = cities[Math.floor(Math.random() * cities.length)];
+                    
+                    toastName.textContent = randomName;
+                    toastCity.textContent = randomCity;
+
+                    // Show toast
+                    toast.classList.remove('opacity-0', 'translate-y-4');
+                    toast.classList.add('opacity-100', 'translate-y-0');
+
+                    // Hide after 5 seconds
+                    setTimeout(() => {
+                        toast.classList.remove('opacity-100', 'translate-y-0');
+                        toast.classList.add('opacity-0', 'translate-y-4');
+                    }, 5000);
+                }
+
+                // Initial delay before first toast (e.g., 8s)
+                setTimeout(() => {
+                    showToast();
+                    // Then show a new toast randomly between 15-25 seconds
+                    setInterval(showToast, Math.floor(Math.random() * 10000) + 15000);
+                }, 8000);
             }
         });
     </script>
