@@ -1,0 +1,6 @@
+{
+  "name": "elumina-mentoria",
+  "description": "Pagina de vendas para sessao de mentoria energetica",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
