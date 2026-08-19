@@ -1,1267 +1,2260 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Descubra a Assinatura Energética do Seu Negócio | Ivelice Gleyce</title>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Descubra a Assinatura Energética do Seu Negócio | Ivelice Gleyce
+    </title>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Tailwind Configuration & Custom Styles -->
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Playfair Display', 'serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        wine: {
-                            DEFAULT: '#3D102A',
-                            dark: '#240616',
-                            light: '#5A1E41'
-                        },
-                        cream: {
-                            DEFAULT: '#FDF9F5',
-                            dark: '#EFE4D8',
-                        },
-                        gold: {
-                            light: '#E6B990',
-                            DEFAULT: '#C88A58',
-                            dark: '#9A5B2C'
-                        }
-                    }
-                }
-            }
-        }
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Playfair Display", "serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            colors: {
+              wine: {
+                DEFAULT: "#3D102A",
+                dark: "#240616",
+                light: "#5A1E41",
+              },
+              cream: {
+                DEFAULT: "#FDF9F5",
+                dark: "#EFE4D8",
+              },
+              gold: {
+                light: "#E6B990",
+                DEFAULT: "#C88A58",
+                dark: "#9A5B2C",
+              },
+            },
+          },
+        },
+      };
     </script>
     <style>
-        :root {
-            --gold: #C88A58;
-            --gold-light: #E6B990;
-            --gold-dark: #9A5B2C;
-            --wine: #3D102A;
-            --cream: #FDF9F5;
+      :root {
+        --gold: #c88a58;
+        --gold-light: #e6b990;
+        --gold-dark: #9a5b2c;
+        --wine: #3d102a;
+        --cream: #fdf9f5;
+      }
+      body {
+        background-color: var(--cream);
+        color: var(--wine);
+      }
+      .text-metallic {
+        background: linear-gradient(
+          to right,
+          #c88a58,
+          #e6b990,
+          #9a5b2c,
+          #e6b990,
+          #c88a58
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .bg-metallic {
+        background: linear-gradient(
+          to right,
+          #c88a58,
+          #e6b990,
+          #9a5b2c,
+          #e6b990,
+          #c88a58
+        );
+      }
+      .btn-metallic,
+      .gold-bg {
+        background: linear-gradient(135deg, #e6b990, #c88a58, #9a5b2c);
+        color: #240616;
+        box-shadow: 0 10px 40px rgba(200, 138, 88, 0.3);
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .btn-metallic:hover,
+      .gold-bg:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 50px rgba(200, 138, 88, 0.5);
+      }
+      .gold-border {
+        border: 1px solid rgba(200, 138, 88, 0.4);
+      }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(200, 138, 88, 0.2);
+        box-shadow: 0 4px 30px rgba(61, 16, 42, 0.05);
+      }
+
+      /* Modern Reveal & Floating Animations */
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .animate-float {
+        animation: float 6s ease-in-out infinite;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(0px);
         }
-        body {
-            background-color: var(--cream);
-            color: var(--wine);
+        50% {
+          transform: translateY(-20px);
         }
-        .text-metallic {
-            background: linear-gradient(to right, #C88A58, #E6B990, #9A5B2C, #E6B990, #C88A58);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        100% {
+          transform: translateY(0px);
         }
-        .bg-metallic {
-            background: linear-gradient(to right, #C88A58, #E6B990, #9A5B2C, #E6B990, #C88A58);
-        }
-        .btn-metallic, .gold-bg {
-            background: linear-gradient(135deg, #E6B990, #C88A58, #9A5B2C);
-            color: #240616;
-            box-shadow: 0 10px 40px rgba(200, 138, 88, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .btn-metallic:hover, .gold-bg:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 50px rgba(200, 138, 88, 0.5);
-        }
-        .gold-border {
-            border: 1px solid rgba(200, 138, 88, 0.4);
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(200, 138, 88, 0.2);
-            box-shadow: 0 4px 30px rgba(61, 16, 42, 0.05);
-        }
-        
-        /* Modern Reveal & Floating Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
+      }
     </style>
-</head>
-<body class="font-sans bg-cream text-wine antialiased selection:bg-gold-DEFAULT selection:text-white">
-
+  </head>
+  <body
+    class="font-sans bg-cream text-wine antialiased selection:bg-gold-DEFAULT selection:text-white"
+  >
     <!-- SEÇÃO 1: HERO -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-wine border-b border-gold-DEFAULT/30">
-        <!-- Shine effect -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-gold-DEFAULT/10 blur-[120px] pointer-events-none"></div>
+    <section
+      class="relative min-h-screen flex items-center justify-center pt-20 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden bg-wine border-b border-gold-DEFAULT/30"
+    >
+      <!-- Shine effect -->
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-gold-DEFAULT/10 blur-[120px] pointer-events-none"
+      ></div>
 
-        <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="text-center lg:text-left space-y-8 reveal">
-                <span class="inline-block py-1 px-3 rounded-full gold-border bg-wine-dark/50 text-gold-light text-sm font-medium tracking-wider uppercase mb-4">
-                    EMPRESÁRIOS E COMÉRCIOS LOCAIS
-                </span>
-                <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white">
-                    Descubra a <span class="uppercase text-metallic">Assinatura Energética</span> do Seu Negócio
-                </h1>
-                <p class="text-lg sm:text-xl text-gray-300 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                    Descubra a <strong class="text-gold-DEFAULT font-semibold italic">força</strong> que seu negócio precisa fortalecer para iniciar um <strong class="text-gold-DEFAULT font-semibold italic">novo ciclo</strong>.
-                </p>
-                <div class="pt-4 flex flex-wrap justify-center lg:justify-start gap-3 text-xs sm:text-sm font-medium text-gold-DEFAULT tracking-widest uppercase">
-                    <span>Intenção</span> &bull; <span>Energia</span> &bull; <span>Foco</span> &bull; <span>Equilíbrio</span> &bull; <span>Prosperidade</span>
-                </div>
-                <div class="pt-6">
-                    <a href="#oferta" class="btn-metallic inline-block font-bold text-lg py-4 px-8 rounded-full uppercase tracking-wide w-full sm:w-auto text-center">
-                        Quero destravar a energia do meu negócio agora!
-                    </a>
-                </div>
-            </div>
-            <div class="flex justify-center lg:justify-end relative reveal" style="transition-delay: 200ms;">
-                <div class="absolute inset-0 bg-gradient-to-tr from-wine to-transparent rounded-2xl blur-xl opacity-20 translate-x-4 translate-y-4"></div>
-                <img src="https://i.postimg.cc/PqT1w9BB/Gemini-Generated-Image-dfsw8cdfsw8cdfsw.jpg" alt="Representação do Gráfico de 36 Forças" class="relative z-10 rounded-2xl gold-border shadow-2xl object-cover max-w-full h-auto w-[420px] lg:w-[490px] animate-float">
-            </div>
+      <div
+        class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+      >
+        <div class="text-center lg:text-left space-y-8 reveal">
+          <span
+            class="inline-block py-1 px-3 rounded-full gold-border bg-wine-dark/50 text-gold-light text-sm font-medium tracking-wider uppercase mb-4"
+          >
+            EMPRESÁRIOS E COMÉRCIOS LOCAIS
+          </span>
+          <h1
+            class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-white"
+          >
+            Descubra a
+            <span class="uppercase text-metallic">Assinatura Energética</span>
+            do Seu Negócio
+          </h1>
+          <p
+            class="text-lg sm:text-xl text-gray-300 font-light leading-relaxed max-w-2xl mx-auto lg:mx-0"
+          >
+            Descubra a
+            <strong class="text-gold-DEFAULT font-semibold italic"
+              >força</strong
+            >
+            que seu negócio precisa fortalecer para iniciar um
+            <strong class="text-gold-DEFAULT font-semibold italic"
+              >novo ciclo</strong
+            >.
+          </p>
+          <div
+            class="pt-4 flex flex-wrap justify-center lg:justify-start gap-3 text-xs sm:text-sm font-medium text-gold-DEFAULT tracking-widest uppercase"
+          >
+            <span>Intenção</span> &bull; <span>Energia</span> &bull;
+            <span>Foco</span> &bull; <span>Equilíbrio</span> &bull;
+            <span>Prosperidade</span>
+          </div>
+          <div class="pt-6">
+            <a
+              href="#oferta"
+              class="btn-metallic inline-block font-bold text-lg py-4 px-8 rounded-full uppercase tracking-wide w-full sm:w-auto text-center"
+            >
+              Quero destravar a energia do meu negócio agora!
+            </a>
+          </div>
         </div>
+        <div
+          class="flex justify-center lg:justify-end relative reveal"
+          style="transition-delay: 200ms"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-wine to-transparent rounded-2xl blur-xl opacity-20 translate-x-4 translate-y-4"
+          ></div>
+          <img
+            src="https://i.postimg.cc/PqT1w9BB/Gemini-Generated-Image-dfsw8cdfsw8cdfsw.jpg"
+            alt="Representação do Gráfico de 36 Forças"
+            class="relative z-10 rounded-2xl gold-border shadow-2xl object-cover max-w-full h-auto w-[420px] lg:w-[490px] animate-float"
+          />
+        </div>
+      </div>
     </section>
 
     <!-- SEÇÃO 2: PROBLEMA/DORES -->
     <section class="py-24 px-4 sm:px-6 lg:px-8 bg-cream">
-        <div class="max-w-6xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-wine mb-6">
-                    A <span class="font-heading italic text-wine text-5xl">Nova Vibração</span> para o seu negócio
-                </h2>
-                <div class="w-20 h-1 bg-gold-DEFAULT mx-auto rounded-full"></div>
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <h2
+            class="font-heading text-3xl sm:text-4xl font-bold text-wine mb-6"
+          >
+            A
+            <span class="font-heading italic text-wine text-5xl"
+              >Nova Vibração</span
+            >
+            para o seu negócio
+          </h2>
+          <div class="w-20 h-1 bg-gold-DEFAULT mx-auto rounded-full"></div>
+
+          <!-- Ícones de Valores -->
+          <div class="flex flex-wrap justify-center gap-8 sm:gap-12 mt-12">
+            <div class="flex flex-col items-center gap-3 group">
+              <div
+                class="w-16 h-16 rounded-full bg-white flex items-center justify-center text-gold-DEFAULT text-2xl border border-gold-DEFAULT/30 shadow-[0_4px_15px_rgba(200,138,88,0.15)] group-hover:-translate-y-2 group-hover:border-gold-DEFAULT transition-all duration-300"
+              >
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <span
+                class="text-wine-dark font-bold text-[11px] sm:text-xs uppercase tracking-widest"
+                >Intenção</span
+              >
             </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6">
-                <!-- Pergunta 1 -->
-                <div class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal">
-                    <div class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <p class="text-wine/80 font-medium">Seu negócio está travado?</p>
-                </div>
-                <!-- Pergunta 2 -->
-                <div class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal" style="transition-delay: 100ms;">
-                    <div class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </div>
-                    <p class="text-wine/80 font-medium">Sente que perdeu o movimento?</p>
-                </div>
-                <!-- Pergunta 3 -->
-                <div class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal" style="transition-delay: 200ms;">
-                    <div class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-                    <p class="text-wine/80 font-medium">Quer atrair mais clientes certos?</p>
-                </div>
-                <!-- Pergunta 4 -->
-                <div class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal" style="transition-delay: 300ms;">
-                    <div class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]">
-                        <i class="fa-solid fa-lightbulb"></i>
-                    </div>
-                    <p class="text-wine/80 font-medium">Busca mais clareza para suas decisões?</p>
-                </div>
-                <!-- Pergunta 5 -->
-                <div class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal" style="transition-delay: 400ms;">
-                    <div class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]">
-                        <i class="fa-solid fa-hand-holding-dollar"></i>
-                    </div>
-                    <p class="text-wine/80 font-medium">Deseja prosperar com leveza?</p>
-                </div>
-                <!-- Pergunta 6 (Nova Dor) -->
-                <div class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal" style="transition-delay: 500ms;">
-                    <div class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]">
-                        <i class="fa-solid fa-battery-quarter"></i>
-                    </div>
-                    <p class="text-wine/80 font-medium">Sente exaustão e falta de energia?</p>
-                </div>
+
+            <div class="flex flex-col items-center gap-3 group">
+              <div
+                class="w-16 h-16 rounded-full bg-white flex items-center justify-center text-gold-DEFAULT text-2xl border border-gold-DEFAULT/30 shadow-[0_4px_15px_rgba(200,138,88,0.15)] group-hover:-translate-y-2 group-hover:border-gold-DEFAULT transition-all duration-300"
+              >
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <span
+                class="text-wine-dark font-bold text-[11px] sm:text-xs uppercase tracking-widest"
+                >Energia</span
+              >
             </div>
+
+            <div class="flex flex-col items-center gap-3 group">
+              <div
+                class="w-16 h-16 rounded-full bg-white flex items-center justify-center text-gold-DEFAULT text-2xl border border-gold-DEFAULT/30 shadow-[0_4px_15px_rgba(200,138,88,0.15)] group-hover:-translate-y-2 group-hover:border-gold-DEFAULT transition-all duration-300"
+              >
+                <i class="fa-solid fa-bullseye"></i>
+              </div>
+              <span
+                class="text-wine-dark font-bold text-[11px] sm:text-xs uppercase tracking-widest"
+                >Foco</span
+              >
+            </div>
+
+            <div class="flex flex-col items-center gap-3 group">
+              <div
+                class="w-16 h-16 rounded-full bg-white flex items-center justify-center text-gold-DEFAULT text-2xl border border-gold-DEFAULT/30 shadow-[0_4px_15px_rgba(200,138,88,0.15)] group-hover:-translate-y-2 group-hover:border-gold-DEFAULT transition-all duration-300"
+              >
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+              <span
+                class="text-wine-dark font-bold text-[11px] sm:text-xs uppercase tracking-widest"
+                >Equilíbrio</span
+              >
+            </div>
+
+            <div class="flex flex-col items-center gap-3 group">
+              <div
+                class="w-16 h-16 rounded-full bg-white flex items-center justify-center text-gold-DEFAULT text-2xl border border-gold-DEFAULT/30 shadow-[0_4px_15px_rgba(200,138,88,0.15)] group-hover:-translate-y-2 group-hover:border-gold-DEFAULT transition-all duration-300"
+              >
+                <i class="fa-solid fa-arrow-trend-up"></i>
+              </div>
+              <span
+                class="text-wine-dark font-bold text-[11px] sm:text-xs uppercase tracking-widest"
+                >Prosperidade</span
+              >
+            </div>
+          </div>
         </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6"
+        >
+          <!-- Pergunta 1 -->
+          <div
+            class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal"
+          >
+            <div
+              class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]"
+            >
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <p class="text-wine/80 font-medium">Seu negócio está travado?</p>
+          </div>
+          <!-- Pergunta 2 -->
+          <div
+            class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal"
+            style="transition-delay: 100ms"
+          >
+            <div
+              class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]"
+            >
+              <i class="fa-solid fa-bag-shopping"></i>
+            </div>
+            <p class="text-wine/80 font-medium">
+              Sente que perdeu o movimento?
+            </p>
+          </div>
+          <!-- Pergunta 3 -->
+          <div
+            class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal"
+            style="transition-delay: 200ms"
+          >
+            <div
+              class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]"
+            >
+              <i class="fa-solid fa-bullseye"></i>
+            </div>
+            <p class="text-wine/80 font-medium">
+              Quer atrair mais clientes certos?
+            </p>
+          </div>
+          <!-- Pergunta 4 -->
+          <div
+            class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal"
+            style="transition-delay: 300ms"
+          >
+            <div
+              class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]"
+            >
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <p class="text-wine/80 font-medium">
+              Busca mais clareza para suas decisões?
+            </p>
+          </div>
+          <!-- Pergunta 5 -->
+          <div
+            class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal"
+            style="transition-delay: 400ms"
+          >
+            <div
+              class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]"
+            >
+              <i class="fa-solid fa-hand-holding-dollar"></i>
+            </div>
+            <p class="text-wine/80 font-medium">Deseja prosperar com leveza?</p>
+          </div>
+          <!-- Pergunta 6 (Nova Dor) -->
+          <div
+            class="glass-panel p-6 rounded-3xl flex flex-col items-center text-center hover:-translate-y-2 hover:border-gold-DEFAULT transition-all duration-300 reveal"
+            style="transition-delay: 500ms"
+          >
+            <div
+              class="flex-shrink-0 w-16 h-16 mb-4 border border-gold-DEFAULT/50 rounded-2xl flex items-center justify-center text-wine text-3xl bg-white shadow-[0_0_15px_rgba(200,138,88,0.2)]"
+            >
+              <i class="fa-solid fa-battery-quarter"></i>
+            </div>
+            <p class="text-wine/80 font-medium">
+              Sente exaustão e falta de energia?
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SEÇÃO 3: APRESENTAÇÃO DA SOLUÇÃO -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-wine relative overflow-hidden border-y border-gold-DEFAULT/30">
-        <!-- Shine effect -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-gold-DEFAULT/5 blur-[120px] pointer-events-none"></div>
+    <section
+      class="py-24 px-4 sm:px-6 lg:px-8 bg-wine relative overflow-hidden border-y border-gold-DEFAULT/30"
+    >
+      <!-- Shine effect -->
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-gold-DEFAULT/5 blur-[120px] pointer-events-none"
+      ></div>
 
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div class="order-2 lg:order-1 relative reveal w-[80%] mx-auto">
-                <div class="absolute -inset-4 bg-gold-DEFAULT/20 rounded-2xl blur-lg"></div>
-                <img src="https://i.postimg.cc/NfqHrL2G/Gemini-Generated-Image-e1pkpee1pkpee1pk.jpg" alt="Sessão de Alinhamento Vibracional" class="relative z-10 rounded-xl gold-border shadow-2xl w-full object-cover">
-            </div>
-            <div class="order-1 lg:order-2 space-y-6 reveal" style="transition-delay: 200ms;">
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">
-                    O que está incluso na sua <br><span class="text-metallic italic text-4xl sm:text-5xl mt-2 block">Sessão Exclusiva</span>
-                </h2>
-                <div class="w-20 h-1 bg-gold-DEFAULT rounded-full"></div>
-                
-                <ul class="space-y-6 pt-4">
-                    <li class="flex items-start gap-4 reveal group" style="transition-delay: 300ms;">
-                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gold-DEFAULT/20 text-gold-DEFAULT flex items-center justify-center border border-gold-DEFAULT/50 mt-1 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold-DEFAULT group-hover:text-wine shadow-[0_0_15px_rgba(200,138,88,0.2)]">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <p class="text-lg text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-white">
-                            Sessão personalizada com o <strong class="text-white">Gráfico de 36 Forças</strong>
-                        </p>
-                    </li>
-                    <li class="flex items-start gap-4 reveal group" style="transition-delay: 450ms;">
-                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gold-DEFAULT/20 text-gold-DEFAULT flex items-center justify-center border border-gold-DEFAULT/50 mt-1 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold-DEFAULT group-hover:text-wine shadow-[0_0_15px_rgba(200,138,88,0.2)]">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <p class="text-lg text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-white">
-                            Identificação da força que seu negócio precisa fortalecer
-                        </p>
-                    </li>
-                    <li class="flex items-start gap-4 reveal group" style="transition-delay: 600ms;">
-                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-gold-DEFAULT/20 text-gold-DEFAULT flex items-center justify-center border border-gold-DEFAULT/50 mt-1 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold-DEFAULT group-hover:text-wine shadow-[0_0_15px_rgba(200,138,88,0.2)]">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <p class="text-lg text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-white">
-                            Orientações para um novo ciclo com mais equilíbrio e resultados
-                        </p>
-                    </li>
-                </ul>
-            </div>
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+      >
+        <div class="order-2 lg:order-1 relative reveal w-[80%] mx-auto">
+          <div
+            class="absolute -inset-4 bg-gold-DEFAULT/20 rounded-2xl blur-lg"
+          ></div>
+          <img
+            src="https://i.postimg.cc/NfqHrL2G/Gemini-Generated-Image-e1pkpee1pkpee1pk.jpg"
+            alt="Sessão de Alinhamento Vibracional"
+            class="relative z-10 rounded-xl gold-border shadow-2xl w-full object-cover"
+          />
+        </div>
+        <div
+          class="order-1 lg:order-2 space-y-6 reveal"
+          style="transition-delay: 200ms"
+        >
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold text-white">
+            O que está incluso na sua <br /><span
+              class="text-metallic italic text-4xl sm:text-5xl mt-2 block"
+              >Sessão Exclusiva</span
+            >
+          </h2>
+          <div class="w-20 h-1 bg-gold-DEFAULT rounded-full"></div>
+
+          <ul class="space-y-6 pt-4">
+            <li
+              class="flex items-start gap-4 reveal group"
+              style="transition-delay: 300ms"
+            >
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-gold-DEFAULT/20 text-gold-DEFAULT flex items-center justify-center border border-gold-DEFAULT/50 mt-1 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold-DEFAULT group-hover:text-wine shadow-[0_0_15px_rgba(200,138,88,0.2)]"
+              >
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <p
+                class="text-lg text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-white"
+              >
+                Sessão personalizada com o
+                <strong class="text-white">Gráfico de 36 Forças</strong>
+              </p>
+            </li>
+            <li
+              class="flex items-start gap-4 reveal group"
+              style="transition-delay: 450ms"
+            >
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-gold-DEFAULT/20 text-gold-DEFAULT flex items-center justify-center border border-gold-DEFAULT/50 mt-1 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold-DEFAULT group-hover:text-wine shadow-[0_0_15px_rgba(200,138,88,0.2)]"
+              >
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <p
+                class="text-lg text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-white"
+              >
+                Identificação da força que seu negócio precisa fortalecer
+              </p>
+            </li>
+            <li
+              class="flex items-start gap-4 reveal group"
+              style="transition-delay: 600ms"
+            >
+              <div
+                class="flex-shrink-0 w-8 h-8 rounded-full bg-gold-DEFAULT/20 text-gold-DEFAULT flex items-center justify-center border border-gold-DEFAULT/50 mt-1 transition-transform duration-500 group-hover:scale-110 group-hover:bg-gold-DEFAULT group-hover:text-wine shadow-[0_0_15px_rgba(200,138,88,0.2)]"
+              >
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <p
+                class="text-lg text-gray-300 leading-relaxed transition-colors duration-300 group-hover:text-white"
+              >
+                Orientações para um novo ciclo com mais equilíbrio e resultados
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Explicação do Gráfico 36 Forças -->
+      <div
+        class="max-w-4xl mx-auto mt-20 relative z-10 reveal bg-wine-dark/60 border border-gold-DEFAULT/30 rounded-3xl p-8 sm:p-12 shadow-[0_0_40px_rgba(200,138,88,0.1)]"
+      >
+        <div
+          class="absolute -top-6 left-1/2 -translate-x-1/2 bg-wine border border-gold-DEFAULT px-6 py-2 rounded-full shadow-lg"
+        >
+          <span
+            class="text-gold-DEFAULT font-bold uppercase tracking-widest text-sm"
+            ><i class="fa-solid fa-compass mr-2"></i>A Metodologia</span
+          >
         </div>
 
-        <!-- Explicação do Gráfico 36 Forças -->
-        <div class="max-w-4xl mx-auto mt-20 relative z-10 reveal bg-wine-dark/60 border border-gold-DEFAULT/30 rounded-3xl p-8 sm:p-12 shadow-[0_0_40px_rgba(200,138,88,0.1)]">
-            <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-wine border border-gold-DEFAULT px-6 py-2 rounded-full shadow-lg">
-                <span class="text-gold-DEFAULT font-bold uppercase tracking-widest text-sm"><i class="fa-solid fa-compass mr-2"></i>A Metodologia</span>
-            </div>
-            
-            <h3 class="font-heading text-2xl sm:text-3xl font-bold text-white mb-6 text-center">O que é o Gráfico das <span class="text-metallic italic">36 Forças?</span></h3>
-            
-            <div class="space-y-6 text-gray-300 leading-relaxed text-lg font-medium">
-                <p>
-                    Desenvolvido pelo pesquisador belga <strong class="text-white">Félix Servranx</strong> em 1949, o disco das 36 Forças é um instrumento fascinante e preciso para mapear as energias invisíveis que atuam nos bastidores da vida e dos negócios. 
-                </p>
-                <p>
-                    Segundo a radiestesia avançada, tudo ao nosso redor é energia em movimento. Servranx identificou que existem <strong>36 forças principais</strong> moldando nossas realidades — desde energias conhecidas pela ciência (como a eletricidade e o magnetismo) até forças puramente sutis (como a força cósmica, espiritual e planetária).
-                </p>
-                <div class="pl-6 border-l-2 border-gold-DEFAULT/50 italic text-white/90 py-2 my-4">
-                    "O gráfico funciona como um verdadeiro mapa vibracional. Ele não apenas diagnostica qual força está atuando em um bloqueio empresarial, mas permite neutralizar energias densas e potencializar o que está faltando para o crescimento orgânico."
-                </div>
-                <p>
-                    Durante a nossa sessão, não trabalharemos com suposições. Utilizaremos o pêndulo e este disco de precisão para identificar <strong>exatamente a assinatura energética do seu negócio hoje</strong> e ancorar as forças exatas que ele precisa para voltar a prosperar e fluir.
-                </p>
-            </div>
+        <h3
+          class="font-heading text-2xl sm:text-3xl font-bold text-white mb-6 text-center"
+        >
+          O que é o Gráfico das
+          <span class="text-metallic italic">36 Forças?</span>
+        </h3>
+
+        <div
+          class="space-y-6 text-gray-300 leading-relaxed text-lg font-medium"
+        >
+          <p>
+            Desenvolvido pelo pesquisador belga
+            <strong class="text-white">Félix Servranx</strong> em 1949, o disco
+            das 36 Forças é um instrumento fascinante e preciso para mapear as
+            energias invisíveis que atuam nos bastidores da vida e dos negócios.
+          </p>
+          <p>
+            Segundo a radiestesia avançada, tudo ao nosso redor é energia em
+            movimento. Servranx identificou que existem
+            <strong>36 forças principais</strong> moldando nossas realidades —
+            desde energias conhecidas pela ciência (como a eletricidade e o
+            magnetismo) até forças puramente sutis (como a força cósmica,
+            espiritual e planetária).
+          </p>
+          <div
+            class="pl-6 border-l-2 border-gold-DEFAULT/50 italic text-white/90 py-2 my-4"
+          >
+            "O gráfico funciona como um verdadeiro mapa vibracional. Ele não
+            apenas diagnostica qual força está atuando em um bloqueio
+            empresarial, mas permite neutralizar energias densas e potencializar
+            o que está faltando para o crescimento orgânico."
+          </div>
+          <p>
+            Durante a nossa sessão, não trabalharemos com suposições.
+            Utilizaremos o pêndulo e este disco de precisão para identificar
+            <strong
+              >exatamente a assinatura energética do seu negócio hoje</strong
+            >
+            e ancorar as forças exatas que ele precisa para voltar a prosperar e
+            fluir.
+          </p>
         </div>
+      </div>
     </section>
 
     <!-- SEÇÃO: PASSO A PASSO DA TRANSFORMAÇÃO -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-cream border-b border-gold-DEFAULT/20 relative">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20 reveal">
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-wine mb-6">
-                    Passo a Passo da <span class="text-metallic italic">Transformação</span>
-                </h2>
-                <div class="w-20 h-1 bg-gold-DEFAULT mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative">
-                <!-- Linha tracejada conectora (visível apenas desktop) -->
-                <div class="hidden md:block absolute top-12 left-[15%] right-[15%] border-t-2 border-dashed border-gold-DEFAULT/40 z-0"></div>
-
-                <!-- Passo 1 -->
-                <div class="relative z-10 flex flex-col items-center text-center reveal">
-                    <div class="w-24 h-24 rounded-full bg-white border-2 border-gold-DEFAULT shadow-[0_0_20px_rgba(200,138,88,0.15)] flex items-center justify-center mb-6 text-wine font-heading text-4xl font-bold relative">
-                        1
-                    </div>
-                    <h3 class="text-xl font-bold text-wine mb-3 uppercase tracking-wide text-sm">Agendamento</h3>
-                    <p class="text-wine/80 leading-relaxed max-w-sm">
-                        Após garantir sua vaga, você escolhe o melhor dia e horário para o nosso encontro e preenche um formulário rápido.
-                    </p>
-                </div>
-
-                <!-- Passo 2 -->
-                <div class="relative z-10 flex flex-col items-center text-center reveal" style="transition-delay: 100ms;">
-                    <div class="w-24 h-24 rounded-full bg-wine border-2 border-gold-DEFAULT shadow-[0_0_30px_rgba(200,138,88,0.3)] flex items-center justify-center mb-6 text-gold-light font-heading text-4xl font-bold relative">
-                        2
-                    </div>
-                    <h3 class="text-xl font-bold text-wine mb-3 uppercase tracking-wide text-sm">Diagnóstico Vibracional</h3>
-                    <p class="text-wine/80 leading-relaxed max-w-sm">
-                        Durante a sessão, utilizamos o Gráfico de 36 Forças para mapear a assinatura energética do seu negócio e o bloqueio atual.
-                    </p>
-                </div>
-
-                <!-- Passo 3 -->
-                <div class="relative z-10 flex flex-col items-center text-center reveal" style="transition-delay: 200ms;">
-                    <div class="w-24 h-24 rounded-full bg-white border-2 border-gold-DEFAULT shadow-[0_0_20px_rgba(200,138,88,0.15)] flex items-center justify-center mb-6 text-wine font-heading text-4xl font-bold relative">
-                        3
-                    </div>
-                    <h3 class="text-xl font-bold text-wine mb-3 uppercase tracking-wide text-sm">Plano Prático</h3>
-                    <p class="text-wine/80 leading-relaxed max-w-sm">
-                        Você sai com total clareza e uma direção exata do que precisa fazer para reestabelecer o fluxo de vendas com leveza.
-                    </p>
-                </div>
-            </div>
+    <section
+      class="py-24 px-4 sm:px-6 lg:px-8 bg-cream border-b border-gold-DEFAULT/20 relative"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-20 reveal">
+          <h2
+            class="font-heading text-3xl sm:text-4xl font-bold text-wine mb-6"
+          >
+            Passo a Passo da
+            <span class="text-metallic italic">Transformação</span>
+          </h2>
+          <div class="w-20 h-1 bg-gold-DEFAULT mx-auto rounded-full"></div>
         </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 relative">
+          <!-- Linha tracejada conectora (visível apenas desktop) -->
+          <div
+            class="hidden md:block absolute top-12 left-[15%] right-[15%] border-t-2 border-dashed border-gold-DEFAULT/40 z-0"
+          ></div>
+
+          <!-- Passo 1 -->
+          <div
+            class="relative z-10 flex flex-col items-center text-center reveal"
+          >
+            <div
+              class="w-24 h-24 rounded-full bg-white border-2 border-gold-DEFAULT shadow-[0_0_20px_rgba(200,138,88,0.15)] flex items-center justify-center mb-6 text-wine font-heading text-4xl font-bold relative"
+            >
+              1
+            </div>
+            <h3
+              class="text-xl font-bold text-wine mb-3 uppercase tracking-wide text-sm"
+            >
+              Agendamento
+            </h3>
+            <p class="text-wine/80 leading-relaxed max-w-sm">
+              Após garantir sua vaga, você escolhe o melhor dia e horário para o
+              nosso encontro e preenche um formulário rápido.
+            </p>
+          </div>
+
+          <!-- Passo 2 -->
+          <div
+            class="relative z-10 flex flex-col items-center text-center reveal"
+            style="transition-delay: 100ms"
+          >
+            <div
+              class="w-24 h-24 rounded-full bg-wine border-2 border-gold-DEFAULT shadow-[0_0_30px_rgba(200,138,88,0.3)] flex items-center justify-center mb-6 text-gold-light font-heading text-4xl font-bold relative"
+            >
+              2
+            </div>
+            <h3
+              class="text-xl font-bold text-wine mb-3 uppercase tracking-wide text-sm"
+            >
+              Diagnóstico Vibracional
+            </h3>
+            <p class="text-wine/80 leading-relaxed max-w-sm">
+              Durante a sessão, utilizamos o Gráfico de 36 Forças para mapear a
+              assinatura energética do seu negócio e o bloqueio atual.
+            </p>
+          </div>
+
+          <!-- Passo 3 -->
+          <div
+            class="relative z-10 flex flex-col items-center text-center reveal"
+            style="transition-delay: 200ms"
+          >
+            <div
+              class="w-24 h-24 rounded-full bg-white border-2 border-gold-DEFAULT shadow-[0_0_20px_rgba(200,138,88,0.15)] flex items-center justify-center mb-6 text-wine font-heading text-4xl font-bold relative"
+            >
+              3
+            </div>
+            <h3
+              class="text-xl font-bold text-wine mb-3 uppercase tracking-wide text-sm"
+            >
+              Plano Prático
+            </h3>
+            <p class="text-wine/80 leading-relaxed max-w-sm">
+              Você sai com total clareza e uma direção exata do que precisa
+              fazer para reestabelecer o fluxo de vendas com leveza.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SEÇÃO DE DEPOIMENTOS -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-cream-dark border-b border-gold-DEFAULT/20">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-wine mb-6">
-                    O que dizem os empresários que já realizaram o <span class="text-metallic italic">alinhamento</span>
-                </h2>
-                <div class="w-20 h-1 bg-gold-DEFAULT mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="relative overflow-hidden w-full px-2 py-4">
-                <!-- Carousel Track -->
-                <div id="testimonial-track" class="flex gap-8 transition-transform duration-700 ease-in-out w-full cursor-grab active:cursor-grabbing">
-                    <!-- Depoimento 1 (VÍDEO) -->
-                    <div class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] p-0 rounded-3xl relative transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:scale-[1.02] overflow-hidden bg-black flex flex-col justify-between group">
-                        <div class="absolute top-4 left-4 z-20 flex gap-1 text-gold-DEFAULT text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <div class="absolute inset-0 z-0">
-                            <!-- Video Player -->
-                            <video class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300" 
-                                   controls preload="metadata" 
-                                   poster="https://i.postimg.cc/mZhPnhgS/video-poster-placeholder.jpg">
-                                <source src="/files/e432f8df-6cf1-4566-aeef-bc659223bb34_video.mp4" type="video/mp4">
-                                Seu navegador não suporta o formato de vídeo.
-                            </video>
-                        </div>
-                        <div class="relative z-10 p-6 pt-32 bg-gradient-to-t from-black via-black/80 to-transparent mt-auto pointer-events-none">
-                            <h4 class="font-bold text-white text-lg leading-tight">Empresário Palestrante</h4>
-                            <p class="text-xs font-bold text-gold-DEFAULT uppercase tracking-wide mt-1">Evento ao vivo</p>
-                            <p class="text-gray-300 text-sm mt-3 leading-relaxed italic line-clamp-3 pointer-events-auto">
-                                "Somos um centro energético, uma alma... somos capazes de medir esse campo energético..."
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 2 -->
-                    <div class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10">
-                        <i class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"></i>
-                        <div class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]">
-                            "Eu trabalhava muito e o caixa não respondia. A sessão me mostrou o ponto exato do vazamento de energia. Hoje o movimento voltou e recuperei minha paz mental."
-                        </p>
-                        <div class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4">
-                            <div>
-                                <h4 class="font-bold text-wine text-lg leading-tight">Roberto C.</h4>
-                                <p class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1">Loja de Roupas</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 3 -->
-                    <div class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10">
-                        <i class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"></i>
-                        <div class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]">
-                            "Incrível como a metodologia vai direto ao ponto. Entendi qual força faltava no meu negócio e tomei as rédeas. Os resultados acompanharam minha nova postura."
-                        </p>
-                        <div class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4">
-                            <div>
-                                <h4 class="font-bold text-wine text-lg leading-tight">Juliana M.</h4>
-                                <p class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1">Setor de Gastronomia</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 4 -->
-                    <div class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10 flex flex-col justify-between">
-                        <div>
-                            <i class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"></i>
-                            <div class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-wine/80 font-medium mb-4 leading-relaxed relative z-10">
-                                "Depois da sessão, o ambiente do escritório mudou. Os clientes começaram a fechar contratos com muito mais facilidade."
-                            </p>
-                        </div>
-                        
-                        <div class="relative z-10">
-                            <!-- Link de vídeo placeholder -->
-                            <a href="#" class="inline-flex items-center gap-2 text-sm font-bold text-wine-dark bg-gold-DEFAULT/10 hover:bg-gold-DEFAULT hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 mb-4 group">
-                                <i class="fa-solid fa-circle-play text-gold-DEFAULT group-hover:text-white"></i>
-                                Assistir Depoimento
-                            </a>
-                            
-                            <div class="border-t border-gold-DEFAULT/20 pt-4 flex items-center gap-4">
-                                <div>
-                                    <h4 class="font-bold text-wine text-lg leading-tight">Carlos T.</h4>
-                                    <p class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1">Escritório de Advocacia</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 5 -->
-                    <div class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10">
-                        <i class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"></i>
-                        <div class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]">
-                            "Eu não sabia por que minha agenda vivia com buracos. O diagnóstico foi preciso! Hoje temos fila de espera constantemente."
-                        </p>
-                        <div class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4">
-                            <div>
-                                <h4 class="font-bold text-wine text-lg leading-tight">Fernanda L.</h4>
-                                <p class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1">Salão de Beleza</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 6 -->
-                    <div class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10">
-                        <i class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"></i>
-                        <div class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]">
-                            "Sempre trabalhei duro, mas o dinheiro sumia. Ajustamos a energia do local e o faturamento estabilizou de forma incrível em poucos meses."
-                        </p>
-                        <div class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4">
-                            <div>
-                                <h4 class="font-bold text-wine text-lg leading-tight">Ricardo P.</h4>
-                                <p class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1">Oficina Mecânica</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 7 -->
-                    <div class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10">
-                        <i class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"></i>
-                        <div class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]">
-                            "A harmonia que o alinhamento trouxe para a minha equipe foi fantástica. E os pacientes sentem essa paz ao chegar."
-                        </p>
-                        <div class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4">
-                            <div>
-                                <h4 class="font-bold text-wine text-lg leading-tight">Amanda G.</h4>
-                                <p class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1">Consultório Odontológico</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 8 -->
-                    <div class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10">
-                        <i class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"></i>
-                        <div class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]">
-                            "Projetos travados começaram a andar logo na semana seguinte. Parecia mágica, mas era apenas a energia certa fluindo solta."
-                        </p>
-                        <div class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4">
-                            <div>
-                                <h4 class="font-bold text-wine text-lg leading-tight">Diego S.</h4>
-                                <p class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1">Agência de Marketing</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 9 -->
-                    <div class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10">
-                        <i class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"></i>
-                        <div class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]">
-                            "A energia da loja estava pesada e eu não entendia o motivo. Fizemos as mudanças práticas sugeridas e as vendas dobraram no mesmo mês!"
-                        </p>
-                        <div class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4">
-                            <div>
-                                <h4 class="font-bold text-wine text-lg leading-tight">Camila R.</h4>
-                                <p class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1">Petshop</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 10 -->
-                    <div class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10">
-                        <i class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"></i>
-                        <div class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]">
-                            "Como pessoa lógica, confesso que duvidei no início. Mas o resultado nos números da empresa me provou que a vibração dita as regras."
-                        </p>
-                        <div class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4">
-                            <div>
-                                <h4 class="font-bold text-wine text-lg leading-tight">Tiago V.</h4>
-                                <p class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1">Empresa de TI</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Depoimento 11 (Com Vídeo) -->
-                    <div class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10 flex flex-col justify-between">
-                        <i class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"></i>
-                        <div>
-                            <div class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10">
-                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                            </div>
-                            <p class="text-wine/80 font-medium mb-4 leading-relaxed relative z-10 min-h-[60px]">
-                                "A sessão foi um divisor de águas. O diagnóstico foi preciso e já sinto a energia e os clientes voltando a fluir de forma natural."
-                            </p>
-                        </div>
-                        
-                        <div class="relative z-10 mt-2">
-                            <a href="javascript:void(0)" onclick="openVideoModal()" class="inline-flex items-center gap-2 text-sm font-bold text-wine-dark bg-gold-DEFAULT/10 hover:bg-gold-DEFAULT hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 mb-4 group cursor-pointer">
-                                <i class="fa-solid fa-circle-play text-gold-DEFAULT group-hover:text-white"></i>
-                                Assistir Depoimento
-                            </a>
-                            
-                            <div class="border-t border-gold-DEFAULT/20 pt-4 flex items-center gap-4">
-                                <div>
-                                    <h4 class="font-bold text-wine text-lg leading-tight">Mariana S.</h4>
-                                    <p class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1">Clínica de Estética</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Dots Indicator (optional, but good for UX) -->
-                <div id="carousel-dots" class="flex justify-center gap-2 mt-8"></div>
-            </div>
+    <section
+      class="py-24 px-4 sm:px-6 lg:px-8 bg-cream-dark border-b border-gold-DEFAULT/20"
+    >
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-16 reveal">
+          <h2
+            class="font-heading text-3xl sm:text-4xl font-bold text-wine mb-6"
+          >
+            O que dizem os empresários que já realizaram o
+            <span class="text-metallic italic">alinhamento</span>
+          </h2>
+          <div class="w-20 h-1 bg-gold-DEFAULT mx-auto rounded-full"></div>
         </div>
+
+        <div class="relative overflow-hidden w-full px-2 py-4">
+          <!-- Carousel Track -->
+          <div
+            id="testimonial-track"
+            class="flex gap-8 transition-transform duration-700 ease-in-out w-full cursor-grab active:cursor-grabbing"
+          >
+            <!-- Depoimento 1 (VÍDEO) -->
+            <div
+              class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] p-0 rounded-3xl relative transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:scale-[1.02] overflow-hidden bg-black flex flex-col justify-between group"
+            >
+              <div
+                class="absolute top-4 left-4 z-20 flex gap-1 text-gold-DEFAULT text-sm"
+              >
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <div class="absolute inset-0 z-0">
+                <!-- Video Player -->
+                <video
+                  class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                  controls
+                  preload="metadata"
+                  poster="https://i.postimg.cc/mZhPnhgS/video-poster-placeholder.jpg"
+                >
+                  <source
+                    src="/files/e432f8df-6cf1-4566-aeef-bc659223bb34_video.mp4"
+                    type="video/mp4"
+                  />
+                  Seu navegador não suporta o formato de vídeo.
+                </video>
+              </div>
+              <div
+                class="relative z-10 p-6 pt-32 bg-gradient-to-t from-black via-black/80 to-transparent mt-auto pointer-events-none"
+              >
+                <h4 class="font-bold text-white text-lg leading-tight">
+                  Empresário Palestrante
+                </h4>
+                <p
+                  class="text-xs font-bold text-gold-DEFAULT uppercase tracking-wide mt-1"
+                >
+                  Evento ao vivo
+                </p>
+                <p
+                  class="text-gray-300 text-sm mt-3 leading-relaxed italic line-clamp-3 pointer-events-auto"
+                >
+                  "Somos um centro energético, uma alma... somos capazes de
+                  medir esse campo energético..."
+                </p>
+              </div>
+            </div>
+
+            <!-- Depoimento 2 -->
+            <div
+              class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10"
+            >
+              <i
+                class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"
+              ></i>
+              <div
+                class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10"
+              >
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p
+                class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]"
+              >
+                "Eu trabalhava muito e o caixa não respondia. A sessão me
+                mostrou o ponto exato do vazamento de energia. Hoje o movimento
+                voltou e recuperei minha paz mental."
+              </p>
+              <div
+                class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4"
+              >
+                <div>
+                  <h4 class="font-bold text-wine text-lg leading-tight">
+                    Roberto C.
+                  </h4>
+                  <p
+                    class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1"
+                  >
+                    Loja de Roupas
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Depoimento 3 -->
+            <div
+              class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10"
+            >
+              <i
+                class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"
+              ></i>
+              <div
+                class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10"
+              >
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p
+                class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]"
+              >
+                "Incrível como a metodologia vai direto ao ponto. Entendi qual
+                força faltava no meu negócio e tomei as rédeas. Os resultados
+                acompanharam minha nova postura."
+              </p>
+              <div
+                class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4"
+              >
+                <div>
+                  <h4 class="font-bold text-wine text-lg leading-tight">
+                    Juliana M.
+                  </h4>
+                  <p
+                    class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1"
+                  >
+                    Setor de Gastronomia
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Depoimento 4 -->
+            <div
+              class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10 flex flex-col justify-between"
+            >
+              <div>
+                <i
+                  class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"
+                ></i>
+                <div
+                  class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10"
+                >
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                </div>
+                <p
+                  class="text-wine/80 font-medium mb-4 leading-relaxed relative z-10"
+                >
+                  "Depois da sessão, o ambiente do escritório mudou. Os clientes
+                  começaram a fechar contratos com muito mais facilidade."
+                </p>
+              </div>
+
+              <div class="relative z-10">
+                <!-- Link de vídeo placeholder -->
+                <a
+                  href="#"
+                  class="inline-flex items-center gap-2 text-sm font-bold text-wine-dark bg-gold-DEFAULT/10 hover:bg-gold-DEFAULT hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 mb-4 group"
+                >
+                  <i
+                    class="fa-solid fa-circle-play text-gold-DEFAULT group-hover:text-white"
+                  ></i>
+                  Assistir Depoimento
+                </a>
+
+                <div
+                  class="border-t border-gold-DEFAULT/20 pt-4 flex items-center gap-4"
+                >
+                  <div>
+                    <h4 class="font-bold text-wine text-lg leading-tight">
+                      Carlos T.
+                    </h4>
+                    <p
+                      class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1"
+                    >
+                      Escritório de Advocacia
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Depoimento 5 -->
+            <div
+              class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10"
+            >
+              <i
+                class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"
+              ></i>
+              <div
+                class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10"
+              >
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p
+                class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]"
+              >
+                "Eu não sabia por que minha agenda vivia com buracos. O
+                diagnóstico foi preciso! Hoje temos fila de espera
+                constantemente."
+              </p>
+              <div
+                class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4"
+              >
+                <div>
+                  <h4 class="font-bold text-wine text-lg leading-tight">
+                    Fernanda L.
+                  </h4>
+                  <p
+                    class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1"
+                  >
+                    Salão de Beleza
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Depoimento 6 -->
+            <div
+              class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10"
+            >
+              <i
+                class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"
+              ></i>
+              <div
+                class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10"
+              >
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p
+                class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]"
+              >
+                "Sempre trabalhei duro, mas o dinheiro sumia. Ajustamos a
+                energia do local e o faturamento estabilizou de forma incrível
+                em poucos meses."
+              </p>
+              <div
+                class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4"
+              >
+                <div>
+                  <h4 class="font-bold text-wine text-lg leading-tight">
+                    Ricardo P.
+                  </h4>
+                  <p
+                    class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1"
+                  >
+                    Oficina Mecânica
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Depoimento 7 -->
+            <div
+              class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10"
+            >
+              <i
+                class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"
+              ></i>
+              <div
+                class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10"
+              >
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p
+                class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]"
+              >
+                "A harmonia que o alinhamento trouxe para a minha equipe foi
+                fantástica. E os pacientes sentem essa paz ao chegar."
+              </p>
+              <div
+                class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4"
+              >
+                <div>
+                  <h4 class="font-bold text-wine text-lg leading-tight">
+                    Amanda G.
+                  </h4>
+                  <p
+                    class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1"
+                  >
+                    Consultório Odontológico
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Depoimento 8 -->
+            <div
+              class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10"
+            >
+              <i
+                class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"
+              ></i>
+              <div
+                class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10"
+              >
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p
+                class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]"
+              >
+                "Projetos travados começaram a andar logo na semana seguinte.
+                Parecia mágica, mas era apenas a energia certa fluindo solta."
+              </p>
+              <div
+                class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4"
+              >
+                <div>
+                  <h4 class="font-bold text-wine text-lg leading-tight">
+                    Diego S.
+                  </h4>
+                  <p
+                    class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1"
+                  >
+                    Agência de Marketing
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Depoimento 9 -->
+            <div
+              class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10"
+            >
+              <i
+                class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"
+              ></i>
+              <div
+                class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10"
+              >
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p
+                class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]"
+              >
+                "A energia da loja estava pesada e eu não entendia o motivo.
+                Fizemos as mudanças práticas sugeridas e as vendas dobraram no
+                mesmo mês!"
+              </p>
+              <div
+                class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4"
+              >
+                <div>
+                  <h4 class="font-bold text-wine text-lg leading-tight">
+                    Camila R.
+                  </h4>
+                  <p
+                    class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1"
+                  >
+                    Petshop
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Depoimento 10 -->
+            <div
+              class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10"
+            >
+              <i
+                class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"
+              ></i>
+              <div
+                class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10"
+              >
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+                ><i class="fa-solid fa-star"></i>
+              </div>
+              <p
+                class="text-wine/80 font-medium mb-6 leading-relaxed relative z-10 min-h-[100px]"
+              >
+                "Como pessoa lógica, confesso que duvidei no início. Mas o
+                resultado nos números da empresa me provou que a vibração dita
+                as regras."
+              </p>
+              <div
+                class="border-t border-gold-DEFAULT/20 pt-4 relative z-10 flex items-center gap-4"
+              >
+                <div>
+                  <h4 class="font-bold text-wine text-lg leading-tight">
+                    Tiago V.
+                  </h4>
+                  <p
+                    class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1"
+                  >
+                    Empresa de TI
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Depoimento 11 (Com Vídeo) -->
+            <div
+              class="flex-none w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] glass-panel p-8 rounded-3xl relative bg-white transition-all duration-500 hover:shadow-[0_0_40px_rgba(200,138,88,0.25)] hover:border-gold-DEFAULT/50 hover:scale-[1.02] hover:z-10 flex flex-col justify-between"
+            >
+              <i
+                class="fa-solid fa-quote-left text-4xl text-gold-DEFAULT/20 absolute top-6 right-6"
+              ></i>
+              <div>
+                <div
+                  class="flex gap-1 text-gold-DEFAULT text-sm mb-4 relative z-10"
+                >
+                  <i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i
+                  ><i class="fa-solid fa-star"></i>
+                </div>
+                <p
+                  class="text-wine/80 font-medium mb-4 leading-relaxed relative z-10 min-h-[60px]"
+                >
+                  "A sessão foi um divisor de águas. O diagnóstico foi preciso e
+                  já sinto a energia e os clientes voltando a fluir de forma
+                  natural."
+                </p>
+              </div>
+
+              <div class="relative z-10 mt-2">
+                <a
+                  href="javascript:void(0)"
+                  onclick="openVideoModal()"
+                  class="inline-flex items-center gap-2 text-sm font-bold text-wine-dark bg-gold-DEFAULT/10 hover:bg-gold-DEFAULT hover:text-white px-4 py-2 rounded-lg transition-colors duration-300 mb-4 group cursor-pointer"
+                >
+                  <i
+                    class="fa-solid fa-circle-play text-gold-DEFAULT group-hover:text-white"
+                  ></i>
+                  Assistir Depoimento
+                </a>
+
+                <div
+                  class="border-t border-gold-DEFAULT/20 pt-4 flex items-center gap-4"
+                >
+                  <div>
+                    <h4 class="font-bold text-wine text-lg leading-tight">
+                      Mariana S.
+                    </h4>
+                    <p
+                      class="text-xs font-bold text-gold-dark uppercase tracking-wide mt-1"
+                    >
+                      Clínica de Estética
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dots Indicator (optional, but good for UX) -->
+          <div id="carousel-dots" class="flex justify-center gap-2 mt-8"></div>
+        </div>
+      </div>
     </section>
 
     <!-- SEÇÃO: RESULTADOS EM NÚMEROS -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-wine text-white border-t border-gold-DEFAULT/20 relative">
-        <!-- Elemento de fundo sutil -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-DEFAULT/5 rounded-full blur-[120px]"></div>
+    <section
+      class="py-24 px-4 sm:px-6 lg:px-8 bg-wine text-white border-t border-gold-DEFAULT/20 relative"
+    >
+      <!-- Elemento de fundo sutil -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gold-DEFAULT/5 rounded-full blur-[120px]"
+        ></div>
+      </div>
+
+      <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-16 reveal">
+          <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-4">
+            Resultados em <span class="text-metallic italic">Números</span>
+          </h2>
+          <div class="w-20 h-1 bg-gold-DEFAULT mx-auto rounded-full mb-6"></div>
+          <p class="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
+            O impacto real do alinhamento vibracional, medido através do
+            crescimento e da estabilidade financeira dos nossos clientes.
+          </p>
         </div>
 
-        <div class="max-w-6xl mx-auto relative z-10">
-            <div class="text-center mb-16 reveal">
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold mb-4">
-                    Resultados em <span class="text-metallic italic">Números</span>
-                </h2>
-                <div class="w-20 h-1 bg-gold-DEFAULT mx-auto rounded-full mb-6"></div>
-                <p class="text-gray-300 max-w-2xl mx-auto text-lg leading-relaxed">
-                    O impacto real do alinhamento vibracional, medido através do crescimento e da estabilidade financeira dos nossos clientes.
-                </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Métrica 1 -->
+          <div
+            class="bg-wine-dark/70 border border-gold-DEFAULT/30 rounded-2xl p-8 text-center reveal shadow-[0_0_30px_rgba(200,138,88,0.1)] hover:border-gold-DEFAULT/60 transition-colors duration-300"
+          >
+            <div class="text-5xl font-heading font-bold text-gold-DEFAULT mb-3">
+              +68%
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Métrica 1 -->
-                <div class="bg-wine-dark/70 border border-gold-DEFAULT/30 rounded-2xl p-8 text-center reveal shadow-[0_0_30px_rgba(200,138,88,0.1)] hover:border-gold-DEFAULT/60 transition-colors duration-300">
-                    <div class="text-5xl font-heading font-bold text-gold-DEFAULT mb-3">+68%</div>
-                    <h3 class="font-bold text-xl mb-3 text-white">Aumento no Faturamento</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">Média de crescimento estável relatada nos primeiros 3 a 6 meses após a sessão.</p>
-                    
-                    <!-- Barra de progresso visual -->
-                    <div class="w-full bg-black/40 rounded-full h-3 overflow-hidden shadow-inner border border-white/5">
-                        <div class="bg-gradient-to-r from-gold-dark to-gold-light h-full rounded-full relative overflow-hidden" style="width: 68%">
-                            <div class="absolute inset-0 bg-white/20 w-full animate-[shimmer_2s_infinite]"></div>
-                        </div>
-                    </div>
-                </div>
+            <h3 class="font-bold text-xl mb-3 text-white">
+              Aumento no Faturamento
+            </h3>
+            <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+              Média de crescimento estável relatada nos primeiros 3 a 6 meses
+              após a sessão.
+            </p>
 
-                <!-- Métrica 2 -->
-                <div class="bg-wine-dark/70 border border-gold-DEFAULT/30 rounded-2xl p-8 text-center reveal shadow-[0_0_30px_rgba(200,138,88,0.1)] hover:border-gold-DEFAULT/60 transition-colors duration-300" style="transition-delay: 100ms;">
-                    <div class="text-5xl font-heading font-bold text-gold-DEFAULT mb-3">92%</div>
-                    <h3 class="font-bold text-xl mb-3 text-white">Fluxo e Produtividade</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">Dos empresários relatam uma melhora drástica no engajamento da equipe e na clareza para tomadas de decisão.</p>
-                    
-                    <!-- Barra de progresso visual -->
-                    <div class="w-full bg-black/40 rounded-full h-3 overflow-hidden shadow-inner border border-white/5">
-                        <div class="bg-gradient-to-r from-gold-dark to-gold-light h-full rounded-full relative overflow-hidden" style="width: 92%">
-                            <div class="absolute inset-0 bg-white/20 w-full animate-[shimmer_2s_infinite]"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Métrica 3 -->
-                <div class="bg-wine-dark/70 border border-gold-DEFAULT/30 rounded-2xl p-8 text-center reveal shadow-[0_0_30px_rgba(200,138,88,0.1)] hover:border-gold-DEFAULT/60 transition-colors duration-300" style="transition-delay: 200ms;">
-                    <div class="text-5xl font-heading font-bold text-gold-DEFAULT mb-3">14 <span class="text-2xl">dias</span></div>
-                    <h3 class="font-bold text-xl mb-3 text-white">Para os Primeiros Sinais</h3>
-                    <p class="text-sm text-gray-400 mb-6 leading-relaxed">Tempo médio para observar o destrave de pequenos processos, vendas paradas e projetos estagnados.</p>
-                    
-                    <!-- Barra visual diferente (cheia) -->
-                    <div class="w-full bg-black/40 rounded-full h-3 overflow-hidden shadow-inner border border-white/5">
-                        <div class="bg-gradient-to-r from-gold-dark to-gold-light h-full rounded-full relative overflow-hidden" style="width: 100%">
-                            <div class="absolute inset-0 bg-white/20 w-full animate-[shimmer_2s_infinite]"></div>
-                        </div>
-                    </div>
-                </div>
+            <!-- Barra de progresso visual -->
+            <div
+              class="w-full bg-black/40 rounded-full h-3 overflow-hidden shadow-inner border border-white/5"
+            >
+              <div
+                class="bg-gradient-to-r from-gold-dark to-gold-light h-full rounded-full relative overflow-hidden"
+                style="width: 68%"
+              >
+                <div
+                  class="absolute inset-0 bg-white/20 w-full animate-[shimmer_2s_infinite]"
+                ></div>
+              </div>
             </div>
+          </div>
+
+          <!-- Métrica 2 -->
+          <div
+            class="bg-wine-dark/70 border border-gold-DEFAULT/30 rounded-2xl p-8 text-center reveal shadow-[0_0_30px_rgba(200,138,88,0.1)] hover:border-gold-DEFAULT/60 transition-colors duration-300"
+            style="transition-delay: 100ms"
+          >
+            <div class="text-5xl font-heading font-bold text-gold-DEFAULT mb-3">
+              92%
+            </div>
+            <h3 class="font-bold text-xl mb-3 text-white">
+              Fluxo e Produtividade
+            </h3>
+            <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+              Dos empresários relatam uma melhora drástica no engajamento da
+              equipe e na clareza para tomadas de decisão.
+            </p>
+
+            <!-- Barra de progresso visual -->
+            <div
+              class="w-full bg-black/40 rounded-full h-3 overflow-hidden shadow-inner border border-white/5"
+            >
+              <div
+                class="bg-gradient-to-r from-gold-dark to-gold-light h-full rounded-full relative overflow-hidden"
+                style="width: 92%"
+              >
+                <div
+                  class="absolute inset-0 bg-white/20 w-full animate-[shimmer_2s_infinite]"
+                ></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Métrica 3 -->
+          <div
+            class="bg-wine-dark/70 border border-gold-DEFAULT/30 rounded-2xl p-8 text-center reveal shadow-[0_0_30px_rgba(200,138,88,0.1)] hover:border-gold-DEFAULT/60 transition-colors duration-300"
+            style="transition-delay: 200ms"
+          >
+            <div class="text-5xl font-heading font-bold text-gold-DEFAULT mb-3">
+              14 <span class="text-2xl">dias</span>
+            </div>
+            <h3 class="font-bold text-xl mb-3 text-white">
+              Para os Primeiros Sinais
+            </h3>
+            <p class="text-sm text-gray-400 mb-6 leading-relaxed">
+              Tempo médio para observar o destrave de pequenos processos, vendas
+              paradas e projetos estagnados.
+            </p>
+
+            <!-- Barra visual diferente (cheia) -->
+            <div
+              class="w-full bg-black/40 rounded-full h-3 overflow-hidden shadow-inner border border-white/5"
+            >
+              <div
+                class="bg-gradient-to-r from-gold-dark to-gold-light h-full rounded-full relative overflow-hidden"
+                style="width: 100%"
+              >
+                <div
+                  class="absolute inset-0 bg-white/20 w-full animate-[shimmer_2s_infinite]"
+                ></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- SEÇÃO DE GARANTIA -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-cream-dark relative border-t border-gold-DEFAULT/20">
-        <div class="max-w-3xl mx-auto text-center reveal">
-            <div class="w-48 h-48 mx-auto mb-8 relative">
-                <div class="absolute inset-0 bg-gold-DEFAULT/20 rounded-full blur-xl scale-110"></div>
-                <img src="https://i.postimg.cc/wBsDB76v/7-dias-de-garantia-3.png" alt="Selo de 7 dias de garantia" class="w-full h-full object-contain relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-300">
-            </div>
-            <h2 class="font-heading text-3xl sm:text-4xl font-bold text-wine mb-6">
-                Garantia Incondicional de 7 Dias <br><span class="text-metallic italic block mt-2">Risco Zero para Você</span>
-            </h2>
-            <p class="text-lg text-wine/80 leading-relaxed">
-                Faça a sua sessão com tranquilidade total. Se nos primeiros 7 dias após o nosso encontro você sentir que o diagnóstico não trouxe clareza e direção prática para destravar sua empresa, basta enviar uma única mensagem. <strong class="text-gold-dark font-medium">Devolveremos 100% do seu investimento</strong> sem perguntas, sem letras miúdas e sem qualquer constrangimento. O risco é todo meu.
-            </p>
+    <section
+      class="py-24 px-4 sm:px-6 lg:px-8 bg-cream-dark relative border-t border-gold-DEFAULT/20"
+    >
+      <div class="max-w-3xl mx-auto text-center reveal">
+        <div class="w-48 h-48 mx-auto mb-8 relative">
+          <div
+            class="absolute inset-0 bg-gold-DEFAULT/20 rounded-full blur-xl scale-110"
+          ></div>
+          <img
+            src="https://i.postimg.cc/wBsDB76v/7-dias-de-garantia-3.png"
+            alt="Selo de 7 dias de garantia"
+            class="w-full h-full object-contain relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+          />
         </div>
+        <h2 class="font-heading text-3xl sm:text-4xl font-bold text-wine mb-6">
+          Garantia Incondicional de 7 Dias <br /><span
+            class="text-metallic italic block mt-2"
+            >Risco Zero para Você</span
+          >
+        </h2>
+        <p class="text-lg text-wine/80 leading-relaxed">
+          Faça a sua sessão com tranquilidade total. Se nos primeiros 7 dias
+          após o nosso encontro você sentir que o diagnóstico não trouxe clareza
+          e direção prática para destravar sua empresa, basta enviar uma única
+          mensagem.
+          <strong class="text-gold-dark font-medium"
+            >Devolveremos 100% do seu investimento</strong
+          >
+          sem perguntas, sem letras miúdas e sem qualquer constrangimento. O
+          risco é todo meu.
+        </p>
+      </div>
     </section>
 
     <!-- SEÇÃO 5: OFERTA E CTA -->
-    <section id="oferta" class="py-24 px-4 sm:px-6 lg:px-8 bg-wine relative border-y border-gold-DEFAULT/30">
-        <!-- Shine effect -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-gold-DEFAULT/10 blur-[120px] pointer-events-none"></div>
-        
-        <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
-            <!-- Contador Regressivo -->
-            <div class="mb-10 inline-block bg-wine-dark/80 backdrop-blur-sm border border-gold-DEFAULT/30 rounded-2xl p-6 sm:px-10 shadow-[0_0_30px_rgba(200,138,88,0.15)]">
-                <p class="text-gold-light uppercase tracking-widest text-sm font-bold mb-4 flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-clock animate-pulse text-gold-DEFAULT"></i> Condição Especial Encerra Em:
-                </p>
-                <div class="flex items-center justify-center gap-3 sm:gap-6" id="countdown">
-                    <div class="flex flex-col items-center">
-                        <div class="text-4xl sm:text-5xl font-heading font-bold text-white tracking-wider w-16 sm:w-20 bg-wine rounded-lg py-2 border border-white/5" id="cd-hours">02</div>
-                        <span class="text-xs text-gray-400 mt-2 uppercase tracking-wide">Horas</span>
-                    </div>
-                    <span class="text-3xl text-gold-DEFAULT font-bold mb-6">:</span>
-                    <div class="flex flex-col items-center">
-                        <div class="text-4xl sm:text-5xl font-heading font-bold text-white tracking-wider w-16 sm:w-20 bg-wine rounded-lg py-2 border border-white/5" id="cd-minutes">45</div>
-                        <span class="text-xs text-gray-400 mt-2 uppercase tracking-wide">Minutos</span>
-                    </div>
-                    <span class="text-3xl text-gold-DEFAULT font-bold mb-6">:</span>
-                    <div class="flex flex-col items-center">
-                        <div class="text-4xl sm:text-5xl font-heading font-bold text-white tracking-wider w-16 sm:w-20 bg-wine rounded-lg py-2 border border-white/5" id="cd-seconds">00</div>
-                        <span class="text-xs text-gray-400 mt-2 uppercase tracking-wide">Segundos</span>
-                    </div>
-                </div>
-            </div>
+    <section
+      id="oferta"
+      class="py-24 px-4 sm:px-6 lg:px-8 bg-wine relative border-y border-gold-DEFAULT/30"
+    >
+      <!-- Shine effect -->
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-gold-DEFAULT/10 blur-[120px] pointer-events-none"
+      ></div>
 
-            <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-10 uppercase tracking-wide">
-                <span class="text-metallic">Invista na Energia</span> do seu negócio <br>
-                <span class="text-2xl sm:text-3xl font-medium font-sans normal-case mt-4 block text-gold-light">e veja sua realidade mudar para melhor.</span>
-            </h2>
-
-            <!-- Bônus Inclusos -->
-            <div class="max-w-4xl mx-auto text-left bg-gradient-to-br from-white/10 to-transparent border border-gold-DEFAULT/40 rounded-3xl p-8 sm:p-10 mb-12 shadow-[0_0_50px_rgba(200,138,88,0.15)] backdrop-blur-md relative overflow-hidden transform hover:scale-[1.01] transition-transform duration-500">
-                <div class="absolute -right-5 -top-5 text-gold-DEFAULT/10 text-[180px] pointer-events-none transform rotate-12">
-                    <i class="fa-solid fa-gift"></i>
-                </div>
-                
-                <div class="text-center mb-8 relative z-10">
-                    <span class="inline-block px-4 py-1 rounded-full bg-gold-DEFAULT/20 text-gold-light text-sm font-bold tracking-widest uppercase mb-3 border border-gold-DEFAULT/30">
-                        Acesso Imediato
-                    </span>
-                    <h3 class="font-heading text-3xl sm:text-4xl font-bold text-white">Você ainda ganha <span class="text-metallic italic">2 Presentes Especiais:</span></h3>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
-                    <!-- Bônus 1 -->
-                    <div class="flex flex-col sm:flex-row items-start gap-5 bg-wine-dark/60 p-6 rounded-2xl border border-gold-DEFAULT/20 hover:border-gold-DEFAULT/60 hover:bg-wine-dark/80 transition-all duration-300 shadow-lg group relative">
-                        <div class="absolute -top-3 -right-3 z-20 bg-[#D32F2F] text-white text-[10px] uppercase font-bold tracking-wider py-1 px-3 rounded-full shadow-[0_2px_10px_rgba(211,47,47,0.5)] border border-white/20 animate-pulse">
-                            <i class="fa-solid fa-fire mr-1"></i> Restam 2 vagas
-                        </div>
-                        <div class="w-20 h-20 rounded-2xl flex-shrink-0 border border-gold-DEFAULT/40 shadow-inner overflow-hidden group-hover:scale-110 transition-transform duration-300">
-                            <img src="https://i.postimg.cc/66n6kq7H/sabonete-artesanal-nova-vibracao.png" alt="Sabonete Artesanal Fitoenergético" class="w-full h-full object-cover">
-                        </div>
-                        <div>
-                            <p class="text-gold-DEFAULT font-bold text-xs uppercase tracking-widest mb-1">Bônus #01</p>
-                            <h4 class="font-bold text-xl text-white mb-2 leading-tight">Sabonete Artesanal Fitoenergético</h4>
-                            <p class="text-gray-300 leading-relaxed">Desenvolvido com a força exata identificada na sessão para apoiar e limpar energeticamente seu negócio no dia a dia.</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Bônus 2 -->
-                    <div class="flex flex-col sm:flex-row items-start gap-5 bg-wine-dark/60 p-6 rounded-2xl border border-gold-DEFAULT/20 hover:border-gold-DEFAULT/60 hover:bg-wine-dark/80 transition-all duration-300 shadow-lg group relative">
-                        <div class="absolute -top-3 -right-3 z-20 bg-[#D32F2F] text-white text-[10px] uppercase font-bold tracking-wider py-1 px-3 rounded-full shadow-[0_2px_10px_rgba(211,47,47,0.5)] border border-white/20 animate-pulse" style="animation-delay: 500ms;">
-                            <i class="fa-solid fa-fire mr-1"></i> Restam 2 vagas
-                        </div>
-                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-gold-DEFAULT/30 to-transparent flex items-center justify-center flex-shrink-0 text-gold-light text-3xl border border-gold-DEFAULT/40 shadow-inner group-hover:scale-110 transition-transform duration-300">
-                            <i class="fa-solid fa-book-open drop-shadow-md"></i>
-                        </div>
-                        <div>
-                            <p class="text-gold-DEFAULT font-bold text-xs uppercase tracking-widest mb-1">Bônus #02</p>
-                            <h4 class="font-bold text-xl text-white mb-2 leading-tight">Guia Prático de Alinhamento Diário</h4>
-                            <p class="text-gray-300 leading-relaxed">Aprenda a manter a alta vibração do seu ambiente comercial de forma constante, fluida e blindada contra a exaustão.</p>
-                        </div>
-                    </div>
-                </div>
+      <div class="max-w-4xl mx-auto text-center relative z-10 reveal">
+        <!-- Contador Regressivo -->
+        <div
+          class="mb-10 inline-block bg-wine-dark/80 backdrop-blur-sm border border-gold-DEFAULT/30 rounded-2xl p-6 sm:px-10 shadow-[0_0_30px_rgba(200,138,88,0.15)]"
+        >
+          <p
+            class="text-gold-light uppercase tracking-widest text-sm font-bold mb-4 flex items-center justify-center gap-2"
+          >
+            <i class="fa-solid fa-clock animate-pulse text-gold-DEFAULT"></i>
+            Condição Especial Encerra Em:
+          </p>
+          <div
+            class="flex items-center justify-center gap-3 sm:gap-6"
+            id="countdown"
+          >
+            <div class="flex flex-col items-center">
+              <div
+                class="text-4xl sm:text-5xl font-heading font-bold text-white tracking-wider w-16 sm:w-20 bg-wine rounded-lg py-2 border border-white/5"
+                id="cd-hours"
+              >
+                02
+              </div>
+              <span class="text-xs text-gray-400 mt-2 uppercase tracking-wide"
+                >Horas</span
+              >
             </div>
-
-            <div class="mb-10">
-                <p class="text-gray-300 text-lg line-through mb-1">De R$ 497,00</p>
-                <p class="text-5xl sm:text-6xl font-bold text-white font-heading">
-                    <span class="text-2xl text-gold-DEFAULT align-top mr-1">R$</span>197<span class="text-2xl text-gold-DEFAULT">,00</span>
-                </p>
-                <p class="text-gold-light text-sm mt-3 uppercase tracking-wide font-medium">Pagamento único • Vagas limitadas</p>
+            <span class="text-3xl text-gold-DEFAULT font-bold mb-6">:</span>
+            <div class="flex flex-col items-center">
+              <div
+                class="text-4xl sm:text-5xl font-heading font-bold text-white tracking-wider w-16 sm:w-20 bg-wine rounded-lg py-2 border border-white/5"
+                id="cd-minutes"
+              >
+                45
+              </div>
+              <span class="text-xs text-gray-400 mt-2 uppercase tracking-wide"
+                >Minutos</span
+              >
             </div>
-            
-            <!-- Selo de Qualidade -->
-            <div class="flex justify-center mb-10">
-                <div class="inline-flex items-center gap-4 bg-wine-dark/80 border border-gold-DEFAULT/30 rounded-xl px-6 py-4 shadow-[0_0_20px_rgba(200,138,88,0.1)] relative overflow-hidden group transform hover:scale-105 transition-all duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                    <div class="text-gold-DEFAULT text-3xl drop-shadow-[0_0_10px_rgba(200,138,88,0.5)]">
-                        <i class="fa-solid fa-certificate"></i>
-                    </div>
-                    <div class="text-left">
-                        <p class="font-bold text-white uppercase tracking-wider text-sm mb-0.5">Selo de Qualidade Energética</p>
-                        <p class="text-xs text-gold-light/80 font-medium">Atendimento 100% sigiloso e certificado</p>
-                    </div>
-                </div>
+            <span class="text-3xl text-gold-DEFAULT font-bold mb-6">:</span>
+            <div class="flex flex-col items-center">
+              <div
+                class="text-4xl sm:text-5xl font-heading font-bold text-white tracking-wider w-16 sm:w-20 bg-wine rounded-lg py-2 border border-white/5"
+                id="cd-seconds"
+              >
+                00
+              </div>
+              <span class="text-xs text-gray-400 mt-2 uppercase tracking-wide"
+                >Segundos</span
+              >
             </div>
-            
-            <div class="max-w-2xl mx-auto">
-                <a href="#" class="btn-metallic flex items-center justify-center gap-4 w-full py-5 rounded-full text-lg sm:text-xl font-bold uppercase tracking-wider animate-pulse hover:animate-none text-center shadow-[0_0_30px_rgba(200,138,88,0.3)] hover:shadow-[0_0_40px_rgba(200,138,88,0.5)] mb-4">
-                    <i class="fa-brands fa-whatsapp text-3xl"></i>
-                    <span>Agende Sua Sessão<br><span class="text-sm font-medium">E Descubra Sua Força</span></span>
-                </a>
-                
-                <!-- Micro-copy de Segurança -->
-                <div class="flex items-center justify-center gap-2 text-gold-light/80 text-xs sm:text-sm font-medium uppercase tracking-wider">
-                    <i class="fa-solid fa-lock text-gold-DEFAULT"></i>
-                    <span>Pagamento 100% Seguro</span>
-                    <span class="text-white/20 mx-1">•</span>
-                    <i class="fa-solid fa-shield-halved text-gold-DEFAULT"></i>
-                    <span>Satisfação Garantida</span>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <h2
+          class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-10 uppercase tracking-wide"
+        >
+          <span class="text-metallic">Invista na Energia</span> do seu negócio
+          <br />
+          <span
+            class="text-2xl sm:text-3xl font-medium font-sans normal-case mt-4 block text-gold-light"
+            >e veja sua realidade mudar para melhor.</span
+          >
+        </h2>
+
+        <!-- Bônus Inclusos -->
+        <div
+          class="max-w-4xl mx-auto text-left bg-gradient-to-br from-white/10 to-transparent border border-gold-DEFAULT/40 rounded-3xl p-8 sm:p-10 mb-12 shadow-[0_0_50px_rgba(200,138,88,0.15)] backdrop-blur-md relative overflow-hidden transform hover:scale-[1.01] transition-transform duration-500"
+        >
+          <div
+            class="absolute -right-5 -top-5 text-gold-DEFAULT/10 text-[180px] pointer-events-none transform rotate-12"
+          >
+            <i class="fa-solid fa-gift"></i>
+          </div>
+
+          <div class="text-center mb-8 relative z-10">
+            <span
+              class="inline-block px-4 py-1 rounded-full bg-gold-DEFAULT/20 text-gold-light text-sm font-bold tracking-widest uppercase mb-3 border border-gold-DEFAULT/30"
+            >
+              Acesso Imediato
+            </span>
+            <h3 class="font-heading text-3xl sm:text-4xl font-bold text-white">
+              Você ainda ganha
+              <span class="text-metallic italic">2 Presentes Especiais:</span>
+            </h3>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+            <!-- Bônus 1 -->
+            <div
+              class="flex flex-col sm:flex-row items-start gap-5 bg-wine-dark/60 p-6 rounded-2xl border border-gold-DEFAULT/20 hover:border-gold-DEFAULT/60 hover:bg-wine-dark/80 transition-all duration-300 shadow-lg group relative"
+            >
+              <div
+                class="absolute -top-3 -right-3 z-20 bg-[#D32F2F] text-white text-[10px] uppercase font-bold tracking-wider py-1 px-3 rounded-full shadow-[0_2px_10px_rgba(211,47,47,0.5)] border border-white/20 animate-pulse"
+              >
+                <i class="fa-solid fa-fire mr-1"></i> Restam 2 vagas
+              </div>
+              <div
+                class="w-20 h-20 rounded-2xl flex-shrink-0 border border-gold-DEFAULT/40 shadow-inner overflow-hidden group-hover:scale-110 transition-transform duration-300"
+              >
+                <img
+                  src="https://i.postimg.cc/66n6kq7H/sabonete-artesanal-nova-vibracao.png"
+                  alt="Sabonete Artesanal Fitoenergético"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div>
+                <p
+                  class="text-gold-DEFAULT font-bold text-xs uppercase tracking-widest mb-1"
+                >
+                  Bônus #01
+                </p>
+                <h4 class="font-bold text-xl text-white mb-2 leading-tight">
+                  Sabonete Artesanal Fitoenergético
+                </h4>
+                <p class="text-gray-300 leading-relaxed">
+                  Desenvolvido com a força exata identificada na sessão para
+                  apoiar e limpar energeticamente seu negócio no dia a dia.
+                </p>
+              </div>
+            </div>
+
+            <!-- Bônus 2 -->
+            <div
+              class="flex flex-col sm:flex-row items-start gap-5 bg-wine-dark/60 p-6 rounded-2xl border border-gold-DEFAULT/20 hover:border-gold-DEFAULT/60 hover:bg-wine-dark/80 transition-all duration-300 shadow-lg group relative"
+            >
+              <div
+                class="absolute -top-3 -right-3 z-20 bg-[#D32F2F] text-white text-[10px] uppercase font-bold tracking-wider py-1 px-3 rounded-full shadow-[0_2px_10px_rgba(211,47,47,0.5)] border border-white/20 animate-pulse"
+                style="animation-delay: 500ms"
+              >
+                <i class="fa-solid fa-fire mr-1"></i> Restam 2 vagas
+              </div>
+              <div
+                class="w-20 h-20 rounded-2xl bg-gradient-to-br from-gold-DEFAULT/30 to-transparent flex items-center justify-center flex-shrink-0 text-gold-light text-3xl border border-gold-DEFAULT/40 shadow-inner group-hover:scale-110 transition-transform duration-300"
+              >
+                <i class="fa-solid fa-book-open drop-shadow-md"></i>
+              </div>
+              <div>
+                <p
+                  class="text-gold-DEFAULT font-bold text-xs uppercase tracking-widest mb-1"
+                >
+                  Bônus #02
+                </p>
+                <h4 class="font-bold text-xl text-white mb-2 leading-tight">
+                  Guia Prático de Alinhamento Diário
+                </h4>
+                <p class="text-gray-300 leading-relaxed">
+                  Aprenda a manter a alta vibração do seu ambiente comercial de
+                  forma constante, fluida e blindada contra a exaustão.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-gray-300 text-lg line-through mb-1">De R$ 497,00</p>
+          <p class="text-5xl sm:text-6xl font-bold text-white font-heading">
+            <span class="text-2xl text-gold-DEFAULT align-top mr-1">R$</span
+            >197<span class="text-2xl text-gold-DEFAULT">,00</span>
+          </p>
+          <p
+            class="text-gold-light text-sm mt-3 uppercase tracking-wide font-medium"
+          >
+            Pagamento único • Vagas limitadas
+          </p>
+        </div>
+
+        <!-- Selo de Qualidade -->
+        <div class="flex justify-center mb-10">
+          <div
+            class="inline-flex items-center gap-4 bg-wine-dark/80 border border-gold-DEFAULT/30 rounded-xl px-6 py-4 shadow-[0_0_20px_rgba(200,138,88,0.1)] relative overflow-hidden group transform hover:scale-105 transition-all duration-300"
+          >
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"
+            ></div>
+            <div
+              class="text-gold-DEFAULT text-3xl drop-shadow-[0_0_10px_rgba(200,138,88,0.5)]"
+            >
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <div class="text-left">
+              <p
+                class="font-bold text-white uppercase tracking-wider text-sm mb-0.5"
+              >
+                Selo de Qualidade Energética
+              </p>
+              <p class="text-xs text-gold-light/80 font-medium">
+                Atendimento 100% sigiloso e certificado
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-2xl mx-auto">
+          <a
+            href="#"
+            class="btn-metallic flex items-center justify-center gap-4 w-full py-5 rounded-full text-lg sm:text-xl font-bold uppercase tracking-wider animate-pulse hover:animate-none text-center shadow-[0_0_30px_rgba(200,138,88,0.3)] hover:shadow-[0_0_40px_rgba(200,138,88,0.5)] mb-4"
+          >
+            <i class="fa-brands fa-whatsapp text-3xl"></i>
+            <span
+              >Agende Sua Sessão<br /><span class="text-sm font-medium"
+                >E Descubra Sua Força</span
+              ></span
+            >
+          </a>
+
+          <!-- Micro-copy de Segurança -->
+          <div
+            class="flex items-center justify-center gap-2 text-gold-light/80 text-xs sm:text-sm font-medium uppercase tracking-wider"
+          >
+            <i class="fa-solid fa-lock text-gold-DEFAULT"></i>
+            <span>Pagamento 100% Seguro</span>
+            <span class="text-white/20 mx-1">•</span>
+            <i class="fa-solid fa-shield-halved text-gold-DEFAULT"></i>
+            <span>Satisfação Garantida</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SEÇÃO 6: SOBRE A ESPECIALISTA (FOOTER AREA) -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-wine-dark relative border-t border-gold-DEFAULT/20">
-        <div class="max-w-5xl mx-auto reveal">
-            <div class="flex flex-col md:flex-row items-center gap-12 mb-16">
-                <div class="flex-shrink-0 relative">
-                    <div class="absolute inset-0 border-2 border-gold-DEFAULT rounded-full scale-105 opacity-50"></div>
-                    <!-- Imagem da Especialista -->
-                    <img src="https://i.postimg.cc/2S0ZGn5Y/Whats-App-Image-2026-08-17-at-14-49-20.jpg" alt="Ivelice Gleyce" class="w-56 h-56 rounded-full object-cover gold-border shadow-2xl relative z-10">
-                    
-                    <!-- Selo na Foto -->
-                    <div class="absolute -bottom-2 -right-4 md:-right-6 z-20 bg-wine border border-gold-DEFAULT/60 rounded-full py-2.5 px-4 flex items-center gap-3 shadow-[0_4px_20px_rgba(200,138,88,0.5)] transform hover:scale-105 transition-all duration-300 backdrop-blur-sm">
-                        <div class="w-8 h-8 rounded-full bg-gold-DEFAULT flex items-center justify-center text-wine-dark shadow-inner">
-                            <i class="fa-solid fa-award text-sm"></i>
-                        </div>
-                        <div class="text-left leading-tight pr-2">
-                            <span class="block text-[9px] text-gold-light/80 uppercase tracking-widest font-bold">Expert em</span>
-                            <span class="block text-sm font-bold text-white uppercase tracking-wider">Radiestesia</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center md:text-left mt-4 md:mt-0">
-                    <h2 class="font-heading text-3xl font-bold text-white mb-2">Quem está por trás da metodologia?</h2>
-                    <h3 class="text-4xl font-heading font-bold text-metallic mb-1 italic">Ivelice Gleyce</h3>
-                    <p class="text-gold-light mb-6 uppercase tracking-widest text-sm font-medium">
-                        A Cientista Energética
-                    </p>
-                    
-                    <p class="text-gray-300 leading-relaxed text-lg max-w-2xl">
-                        Ivelice Gleyce é especialista em diagnósticos vibracionais voltados para o ambiente corporativo e negócios locais. Conhecida como <strong>A Cientista Energética</strong>, ela unifica a precisão analítica a frequências sutis de prosperidade. Sua missão é ajudar empresários a eliminar bloqueios invisíveis e transformar seus espaços em polos magnéticos de atração.
-                    </p>
-                </div>
-            </div>
+    <section
+      class="py-24 px-4 sm:px-6 lg:px-8 bg-wine-dark relative border-t border-gold-DEFAULT/20"
+    >
+      <div class="max-w-5xl mx-auto reveal">
+        <div class="flex flex-col md:flex-row items-center gap-12 mb-16">
+          <div class="flex-shrink-0 relative">
+            <div
+              class="absolute inset-0 border-2 border-gold-DEFAULT rounded-full scale-105 opacity-50"
+            ></div>
+            <!-- Imagem da Especialista -->
+            <img
+              src="https://i.postimg.cc/2S0ZGn5Y/Whats-App-Image-2026-08-17-at-14-49-20.jpg"
+              alt="Ivelice Gleyce"
+              class="w-56 h-56 rounded-full object-cover gold-border shadow-2xl relative z-10"
+            />
+          </div>
+          <div class="text-center md:text-left mt-4 md:mt-0">
+            <h2 class="font-heading text-3xl font-bold text-white mb-2">
+              Quem está por trás da metodologia?
+            </h2>
+            <h3
+              class="text-4xl font-heading font-bold text-metallic mb-1 italic"
+            >
+              Ivelice Gleyce
+            </h3>
+            <p
+              class="text-gold-light mb-6 uppercase tracking-widest text-sm font-medium"
+            >
+              A Cientista Energética
+            </p>
+
+            <p class="text-gray-300 leading-relaxed text-lg max-w-2xl">
+              Ivelice Gleyce é especialista em diagnósticos vibracionais
+              voltados para o ambiente corporativo e negócios locais. Conhecida
+              como <strong>A Cientista Energética</strong>, ela unifica a
+              precisão analítica a frequências sutis de prosperidade. Sua missão
+              é ajudar empresários a eliminar bloqueios invisíveis e transformar
+              seus espaços em polos magnéticos de atração.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- SEÇÃO 7: FAQ -->
-    <section class="py-24 px-4 sm:px-6 lg:px-8 bg-cream border-t border-gold-DEFAULT/20">
-        <div class="max-w-3xl mx-auto">
-            <div class="text-center mb-16 reveal">
-                <h2 class="font-heading text-3xl sm:text-4xl font-bold text-wine mb-6">Dúvidas Frequentes</h2>
-                <div class="w-20 h-1 bg-gold-DEFAULT mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="space-y-4">
-                <!-- Accordion Item 1 -->
-                <div class="glass-panel rounded-2xl overflow-hidden reveal bg-wine">
-                    <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="font-bold text-white text-lg">Isso substitui as ações normais de vendas, atendimento e marketing?</span>
-                        <i class="fa-solid fa-chevron-down text-gold-DEFAULT transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-wine">
-                        <div class="p-6 pt-0 text-gray-200 leading-relaxed border-t border-gold-DEFAULT/10 mt-4 mx-6">
-                            Não substitui, potencializa. O alinhamento atua na raiz invisível que faz boas estratégias falharem. Ao harmonizar a vibração do negócio e do líder, cada ação prática de vendas rende muito mais com menos desgaste.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Accordion Item 2 -->
-                <div class="glass-panel rounded-2xl overflow-hidden reveal bg-wine" style="transition-delay: 100ms;">
-                    <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="font-bold text-white text-lg">Para quem esta sessão é indicada?</span>
-                        <i class="fa-solid fa-chevron-down text-gold-DEFAULT transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-wine">
-                        <div class="p-6 pt-0 text-gray-200 leading-relaxed border-t border-gold-DEFAULT/10 mt-4 mx-6">
-                            Donos de lojas físicas, comércios de rua, clínicas, consultórios, prestadores de serviços e autônomos que sentem o faturamento travado e buscam uma virada de chave sólida e sustentável.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Accordion Item 3 -->
-                <div class="glass-panel rounded-2xl overflow-hidden reveal bg-wine" style="transition-delay: 200ms;">
-                    <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="font-bold text-white text-lg">Como funciona o agendamento após o pagamento?</span>
-                        <i class="fa-solid fa-chevron-down text-gold-DEFAULT transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-wine">
-                        <div class="p-6 pt-0 text-gray-200 leading-relaxed border-t border-gold-DEFAULT/10 mt-4 mx-6">
-                            Imediatamente após a confirmação da sua compra, você receberá um contato direto no WhatsApp para escolher o melhor dia e horário da sua sessão online e individual.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Accordion Item 4 -->
-                <div class="glass-panel rounded-2xl overflow-hidden reveal bg-wine" style="transition-delay: 300ms;">
-                    <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="font-bold text-white text-lg">A sessão é online ou presencial?</span>
-                        <i class="fa-solid fa-chevron-down text-gold-DEFAULT transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-wine">
-                        <div class="p-6 pt-0 text-gray-200 leading-relaxed border-t border-gold-DEFAULT/10 mt-4 mx-6">
-                            A sessão é 100% online, realizada ao vivo via chamada de vídeo. A energia não tem barreiras físicas, permitindo que o diagnóstico e o alinhamento através do Gráfico de 36 Forças sejam feitos com total precisão à distância.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Accordion Item 5 -->
-                <div class="glass-panel rounded-2xl overflow-hidden reveal bg-wine" style="transition-delay: 400ms;">
-                    <button class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
-                        <span class="font-bold text-white text-lg">Quanto tempo demora para os bônus físicos (sabonete) chegarem?</span>
-                        <i class="fa-solid fa-chevron-down text-gold-DEFAULT transition-transform duration-300"></i>
-                    </button>
-                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-wine">
-                        <div class="p-6 pt-0 text-gray-200 leading-relaxed border-t border-gold-DEFAULT/10 mt-4 mx-6">
-                            O Sabonete Artesanal Fitoenergético é preparado sob medida com as frequências identificadas na sua sessão. Ele é enviado via Correios logo após o nosso encontro, e o prazo varia de acordo com a sua região (geralmente entre 5 e 12 dias úteis).
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section
+      class="py-24 px-4 sm:px-6 lg:px-8 bg-cream border-t border-gold-DEFAULT/20"
+    >
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-12 reveal">
+          <h2
+            class="font-heading text-3xl sm:text-4xl font-bold text-wine mb-6"
+          >
+            Dúvidas Frequentes
+          </h2>
+          <div class="w-20 h-1 bg-gold-DEFAULT mx-auto rounded-full"></div>
         </div>
+
+        <!-- Campo de Busca FAQ -->
+        <div class="relative mb-8 reveal">
+          <div
+            class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
+          >
+            <i class="fa-solid fa-magnifying-glass text-gold-DEFAULT"></i>
+          </div>
+          <input
+            type="text"
+            id="faqSearchInput"
+            onkeyup="filterFaq()"
+            placeholder="Pesquise por uma dúvida ou palavra-chave..."
+            class="w-full pl-12 pr-4 py-4 bg-white border border-gold-DEFAULT/30 rounded-2xl text-wine placeholder-wine/50 focus:outline-none focus:ring-2 focus:ring-gold-DEFAULT focus:border-transparent shadow-[0_0_15px_rgba(200,138,88,0.1)] transition-all duration-300 text-lg"
+          />
+        </div>
+
+        <div class="space-y-4" id="faqContainer">
+          <!-- Accordion Item 1 -->
+          <div class="glass-panel rounded-2xl overflow-hidden reveal bg-wine">
+            <button
+              class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-bold text-white text-lg"
+                >Isso substitui as ações normais de vendas, atendimento e
+                marketing?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-DEFAULT transition-transform duration-300"
+              ></i>
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-wine"
+            >
+              <div
+                class="p-6 pt-0 text-gray-200 leading-relaxed border-t border-gold-DEFAULT/10 mt-4 mx-6"
+              >
+                Não substitui, potencializa. O alinhamento atua na raiz
+                invisível que faz boas estratégias falharem. Ao harmonizar a
+                vibração do negócio e do líder, cada ação prática de vendas
+                rende muito mais com menos desgaste.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div
+            class="glass-panel rounded-2xl overflow-hidden reveal bg-wine"
+            style="transition-delay: 100ms"
+          >
+            <button
+              class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-bold text-white text-lg"
+                >Para quem esta sessão é indicada?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-DEFAULT transition-transform duration-300"
+              ></i>
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-wine"
+            >
+              <div
+                class="p-6 pt-0 text-gray-200 leading-relaxed border-t border-gold-DEFAULT/10 mt-4 mx-6"
+              >
+                Donos de lojas físicas, comércios de rua, clínicas,
+                consultórios, prestadores de serviços e autônomos que sentem o
+                faturamento travado e buscam uma virada de chave sólida e
+                sustentável.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div
+            class="glass-panel rounded-2xl overflow-hidden reveal bg-wine"
+            style="transition-delay: 200ms"
+          >
+            <button
+              class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-bold text-white text-lg"
+                >Como funciona o agendamento após o pagamento?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-DEFAULT transition-transform duration-300"
+              ></i>
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-wine"
+            >
+              <div
+                class="p-6 pt-0 text-gray-200 leading-relaxed border-t border-gold-DEFAULT/10 mt-4 mx-6"
+              >
+                Imediatamente após a confirmação da sua compra, você receberá um
+                contato direto no WhatsApp para escolher o melhor dia e horário
+                da sua sessão online e individual.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 4 -->
+          <div
+            class="glass-panel rounded-2xl overflow-hidden reveal bg-wine"
+            style="transition-delay: 300ms"
+          >
+            <button
+              class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-bold text-white text-lg"
+                >A sessão é online ou presencial?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-DEFAULT transition-transform duration-300"
+              ></i>
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-wine"
+            >
+              <div
+                class="p-6 pt-0 text-gray-200 leading-relaxed border-t border-gold-DEFAULT/10 mt-4 mx-6"
+              >
+                A sessão é 100% online, realizada ao vivo via chamada de vídeo.
+                A energia não tem barreiras físicas, permitindo que o
+                diagnóstico e o alinhamento através do Gráfico de 36 Forças
+                sejam feitos com total precisão à distância.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 5 -->
+          <div
+            class="glass-panel rounded-2xl overflow-hidden reveal bg-wine"
+            style="transition-delay: 400ms"
+          >
+            <button
+              class="faq-button w-full px-6 py-5 text-left flex justify-between items-center focus:outline-none"
+              onclick="toggleFaq(this)"
+            >
+              <span class="font-bold text-white text-lg"
+                >Quanto tempo demora para os bônus físicos (sabonete)
+                chegarem?</span
+              >
+              <i
+                class="fa-solid fa-chevron-down text-gold-DEFAULT transition-transform duration-300"
+              ></i>
+            </button>
+            <div
+              class="faq-answer max-h-0 overflow-hidden transition-all duration-300 ease-in-out bg-wine"
+            >
+              <div
+                class="p-6 pt-0 text-gray-200 leading-relaxed border-t border-gold-DEFAULT/10 mt-4 mx-6"
+              >
+                O Sabonete Artesanal Fitoenergético é preparado sob medida com
+                as frequências identificadas na sua sessão. Ele é enviado via
+                Correios logo após o nosso encontro, e o prazo varia de acordo
+                com a sua região (geralmente entre 5 e 12 dias úteis).
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SEÇÃO DE SUPORTE / CHAT -->
-    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-wine-dark relative border-t border-gold-DEFAULT/20 text-center">
-        <!-- Detalhe decorativo -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-full bg-gold-DEFAULT/5 blur-[100px]"></div>
+    <section
+      class="py-16 px-4 sm:px-6 lg:px-8 bg-wine-dark relative border-t border-gold-DEFAULT/20 text-center"
+    >
+      <!-- Detalhe decorativo -->
+      <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-lg h-full bg-gold-DEFAULT/5 blur-[100px]"
+        ></div>
+      </div>
+
+      <div class="max-w-2xl mx-auto relative z-10 reveal text-center">
+        <div class="relative w-24 h-24 mx-auto mb-8">
+          <div
+            class="absolute inset-0 border border-gold-DEFAULT rounded-full scale-110 opacity-50"
+          ></div>
+          <img
+            src="https://i.postimg.cc/2S0ZGn5Y/Whats-App-Image-2026-08-17-at-14-49-20.jpg"
+            alt="Ivelice Suporte"
+            class="w-full h-full rounded-full object-cover border-2 border-gold-DEFAULT shadow-[0_0_20px_rgba(200,138,88,0.3)]"
+          />
+          <div
+            class="absolute -bottom-2 -right-2 w-10 h-10 bg-[#25D366] text-white rounded-full flex items-center justify-center border-[3px] border-wine-dark shadow-lg"
+          >
+            <i class="fa-brands fa-whatsapp text-xl"></i>
+          </div>
         </div>
-        
-        <div class="max-w-2xl mx-auto relative z-10 reveal text-center">
-            <div class="relative w-24 h-24 mx-auto mb-8">
-                <div class="absolute inset-0 border border-gold-DEFAULT rounded-full scale-110 opacity-50"></div>
-                <img src="https://i.postimg.cc/2S0ZGn5Y/Whats-App-Image-2026-08-17-at-14-49-20.jpg" alt="Ivelice Suporte" class="w-full h-full rounded-full object-cover border-2 border-gold-DEFAULT shadow-[0_0_20px_rgba(200,138,88,0.3)]">
-                <div class="absolute -bottom-2 -right-2 w-10 h-10 bg-[#25D366] text-white rounded-full flex items-center justify-center border-[3px] border-wine-dark shadow-lg">
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                </div>
-            </div>
-            
-            <h2 class="font-heading text-2xl sm:text-3xl font-bold text-white mb-4">
-                Ficou com alguma dúvida?
-            </h2>
-            <p class="text-gray-300 mb-8 leading-relaxed">
-                Nossa equipe está disponível agora mesmo no WhatsApp. Fale conosco para tirar qualquer dúvida e entenda como a Sessão de Alinhamento Vibracional pode destravar o fluxo do seu negócio.
-            </p>
-            <a href="#" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white hover:bg-[#1ebd5b] transition-all duration-300 font-bold uppercase tracking-widest text-sm shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_25px_rgba(37,211,102,0.6)] hover:-translate-y-1">
-                <i class="fa-brands fa-whatsapp text-xl"></i>
-                Falar com o Suporte
-            </a>
-        </div>
+
+        <h2 class="font-heading text-2xl sm:text-3xl font-bold text-white mb-4">
+          Ficou com alguma dúvida?
+        </h2>
+        <p class="text-gray-300 mb-8 leading-relaxed">
+          Nossa equipe está disponível agora mesmo no WhatsApp. Fale conosco
+          para tirar qualquer dúvida e entenda como a Sessão de Alinhamento
+          Vibracional pode destravar o fluxo do seu negócio.
+        </p>
+        <a
+          href="#"
+          class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-[#25D366] text-white hover:bg-[#1ebd5b] transition-all duration-300 font-bold uppercase tracking-widest text-sm shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:shadow-[0_6px_25px_rgba(37,211,102,0.6)] hover:-translate-y-1"
+        >
+          <i class="fa-brands fa-whatsapp text-xl"></i>
+          Falar com o Suporte
+        </a>
+      </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="pt-12 pb-8 bg-wine border-t border-gold-DEFAULT/20">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-8">
-                <!-- Marca e Copyright -->
-                <div class="text-center md:text-left">
-                    <div class="inline-block cursor-pointer group" onclick="openBioModal()">
-                        <h3 class="font-heading text-xl font-bold text-metallic mb-1 italic group-hover:text-gold-light transition-colors">Ivelice Gleyce</h3>
-                        <div class="flex items-center justify-center md:justify-start gap-2 mb-3">
-                            <span class="text-gold-light text-xs uppercase tracking-widest font-medium">A Cientista Energética</span>
-                            <span class="bg-gold-DEFAULT/20 border border-gold-DEFAULT/40 text-gold-DEFAULT text-[10px] font-bold uppercase tracking-wider py-0.5 px-2 rounded-full whitespace-nowrap group-hover:bg-gold-DEFAULT group-hover:text-wine-dark transition-colors" title="Ver Mini-biografia">
-                                <i class="fa-solid fa-gem mr-1"></i> Expert em Radiestesia
-                            </span>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm">
-                        &copy; 2026 - Nova Vibração para o seu Negócio.<br>Todos os direitos reservados.
-                    </p>
-                </div>
-
-                <!-- Links Úteis -->
-                <div class="flex flex-col sm:flex-row gap-6 sm:gap-10 text-center sm:text-left text-sm">
-                    <div class="flex flex-col gap-2">
-                        <h4 class="text-white font-bold mb-1 uppercase tracking-wide text-xs">Institucional</h4>
-                        <a href="#" class="text-gray-400 hover:text-gold-DEFAULT transition-colors">Termos de Uso</a>
-                        <a href="#" class="text-gray-400 hover:text-gold-DEFAULT transition-colors">Política de Privacidade</a>
-                    </div>
-                </div>
-
-                <!-- Redes Sociais -->
-                <div class="flex flex-col items-center md:items-end gap-3">
-                    <h4 class="text-white font-bold mb-1 uppercase tracking-wide text-xs">Conecte-se</h4>
-                    <div class="flex gap-4">
-                        <a href="#" target="_blank" class="w-10 h-10 rounded-full bg-wine-dark border border-gold-DEFAULT/30 flex items-center justify-center text-gold-DEFAULT hover:bg-gold-DEFAULT hover:text-white transition-all duration-300">
-                            <i class="fa-brands fa-instagram text-lg"></i>
-                        </a>
-                        <a href="#" target="_blank" class="w-10 h-10 rounded-full bg-wine-dark border border-gold-DEFAULT/30 flex items-center justify-center text-gold-DEFAULT hover:bg-gold-DEFAULT hover:text-white transition-all duration-300">
-                            <i class="fa-brands fa-linkedin-in text-lg"></i>
-                        </a>
-                    </div>
-                </div>
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 mb-8"
+        >
+          <!-- Marca e Copyright -->
+          <div class="text-center md:text-left">
+            <div
+              class="inline-block cursor-pointer group"
+              onclick="openBioModal()"
+            >
+              <h3
+                class="font-heading text-xl font-bold text-metallic mb-1 italic group-hover:text-gold-light transition-colors"
+              >
+                Ivelice Gleyce
+              </h3>
+              <div
+                class="flex items-center justify-center md:justify-start gap-2 mb-3"
+              >
+                <span
+                  class="text-gold-light text-xs uppercase tracking-widest font-medium"
+                  >A Cientista Energética</span
+                >
+                <span
+                  class="bg-gold-DEFAULT/20 border border-gold-DEFAULT/40 text-gold-DEFAULT text-[10px] font-bold uppercase tracking-wider py-0.5 px-2 rounded-full whitespace-nowrap group-hover:bg-gold-DEFAULT group-hover:text-wine-dark transition-colors"
+                  title="Ver Mini-biografia"
+                >
+                  <i class="fa-solid fa-gem mr-1"></i> Expert em Radiestesia
+                </span>
+              </div>
             </div>
-            
-            <div class="border-t border-white/5 pt-6 text-center">
-                <p class="text-gray-500 text-xs">
-                    "Tudo é energia. Ao dominar a frequência, você transforma seus resultados."
-                </p>
+            <p class="text-gray-400 text-sm">
+              &copy; 2026 - Nova Vibração para o seu Negócio.<br />Todos os
+              direitos reservados.
+            </p>
+          </div>
+
+          <!-- Links Úteis -->
+          <div
+            class="flex flex-col sm:flex-row gap-6 sm:gap-10 text-center sm:text-left text-sm"
+          >
+            <div class="flex flex-col gap-2">
+              <h4
+                class="text-white font-bold mb-1 uppercase tracking-wide text-xs"
+              >
+                Institucional
+              </h4>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-gold-DEFAULT transition-colors"
+                >Termos de Uso</a
+              >
+              <a
+                href="#"
+                class="text-gray-400 hover:text-gold-DEFAULT transition-colors"
+                >Política de Privacidade</a
+              >
             </div>
+          </div>
+
+          <!-- Redes Sociais -->
+          <div class="flex flex-col items-center md:items-end gap-3">
+            <h4
+              class="text-white font-bold mb-1 uppercase tracking-wide text-xs"
+            >
+              Conecte-se
+            </h4>
+            <div class="flex gap-4">
+              <a
+                href="#"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-wine-dark border border-gold-DEFAULT/30 flex items-center justify-center text-gold-DEFAULT hover:bg-gold-DEFAULT hover:text-white transition-all duration-300"
+              >
+                <i class="fa-brands fa-instagram text-lg"></i>
+              </a>
+              <a
+                href="#"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-wine-dark border border-gold-DEFAULT/30 flex items-center justify-center text-gold-DEFAULT hover:bg-gold-DEFAULT hover:text-white transition-all duration-300"
+              >
+                <i class="fa-brands fa-linkedin-in text-lg"></i>
+              </a>
+            </div>
+          </div>
         </div>
+
+        <div class="border-t border-white/5 pt-6 text-center">
+          <p class="text-gray-500 text-xs">
+            "Tudo é energia. Ao dominar a frequência, você transforma seus
+            resultados."
+          </p>
+        </div>
+      </div>
     </footer>
 
-    <!-- Card Flutuante de Depoimento em Vídeo -->
-    <a href="javascript:void(0)" onclick="openVideoModal()" class="fixed bottom-28 right-6 z-40 bg-wine-dark border border-gold-DEFAULT/40 rounded-xl p-2 pr-4 flex items-center gap-3 shadow-[0_4px_25px_rgba(0,0,0,0.5)] hover:bg-wine hover:border-gold-DEFAULT hover:-translate-y-1 transition-all duration-300 group cursor-pointer">
-        <div class="relative w-14 h-14 flex-shrink-0 rounded-lg overflow-hidden border border-gold-DEFAULT/30 group-hover:border-gold-DEFAULT transition-colors shadow-inner">
-            <video class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 pointer-events-none" autoplay muted loop playsinline>
-                <source src="/files/e432f8df-6cf1-4566-aeef-bc659223bb34_video.mp4" type="video/mp4">
-            </video>
-            <div class="absolute inset-0 bg-black/40 flex items-center justify-center pointer-events-none">
-                <div class="w-8 h-8 rounded-full bg-gold-DEFAULT/80 flex items-center justify-center text-wine-dark backdrop-blur-sm group-hover:bg-gold-DEFAULT transition-colors">
-                    <i class="fa-solid fa-play text-[10px] ml-0.5"></i>
-                </div>
-            </div>
-        </div>
-        <div class="flex-1 min-w-0">
-            <span class="inline-block px-1.5 py-0.5 bg-gold-DEFAULT/20 text-gold-DEFAULT text-[9px] uppercase tracking-widest font-bold rounded mb-1 border border-gold-DEFAULT/20">Novo</span>
-            <p class="text-xs text-white font-medium leading-tight">
-                Assista ao <br>depoimento
-            </p>
-        </div>
-    </a>
-
     <!-- Botão Flutuante do WhatsApp -->
-    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Diagnóstico%20Vibracional." target="_blank" class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:bg-[#1ebd5b] hover:-translate-y-1 hover:shadow-[0_6px_25px_rgba(37,211,102,0.6)] transition-all duration-300 group">
-        <span class="absolute right-20 bg-wine text-white text-sm py-2 px-4 rounded-xl border border-gold-DEFAULT/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-lg">
-            Fale com o Atendimento
-        </span>
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    <a
+      href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20Diagnóstico%20Vibracional."
+      target="_blank"
+      class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:bg-[#1ebd5b] hover:-translate-y-1 hover:shadow-[0_6px_25px_rgba(37,211,102,0.6)] transition-all duration-300 group"
+    >
+      <span
+        class="absolute right-20 bg-wine text-white text-sm py-2 px-4 rounded-xl border border-gold-DEFAULT/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap shadow-lg"
+      >
+        Fale com o Atendimento
+      </span>
+      <i class="fa-brands fa-whatsapp text-3xl"></i>
     </a>
 
     <!-- Notificação Flutuante (Prova Social) -->
-    <div id="social-proof-toast" class="fixed bottom-6 left-6 z-50 flex items-center gap-4 bg-wine-dark border border-gold-DEFAULT/30 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.5)] opacity-0 translate-y-4 pointer-events-none transition-all duration-500 max-w-xs">
-        <div class="w-10 h-10 rounded-full bg-gold-DEFAULT/20 flex items-center justify-center text-gold-DEFAULT flex-shrink-0">
-            <i class="fa-solid fa-check"></i>
-        </div>
-        <div>
-            <p class="text-white text-sm font-medium leading-tight">
-                <span id="toast-name" class="font-bold text-gold-light"></span> de <span id="toast-city"></span>
-            </p>
-            <p class="text-gray-400 text-xs mt-1">Acabou de agendar uma sessão</p>
-        </div>
+    <div
+      id="social-proof-toast"
+      class="fixed bottom-6 left-6 z-50 flex items-center gap-4 bg-wine-dark border border-gold-DEFAULT/30 rounded-xl p-4 shadow-[0_4px_20px_rgba(0,0,0,0.5)] opacity-0 translate-y-4 pointer-events-none transition-all duration-500 max-w-xs"
+    >
+      <div
+        class="w-10 h-10 rounded-full bg-gold-DEFAULT/20 flex items-center justify-center text-gold-DEFAULT flex-shrink-0"
+      >
+        <i class="fa-solid fa-check"></i>
+      </div>
+      <div>
+        <p class="text-white text-sm font-medium leading-tight">
+          <span id="toast-name" class="font-bold text-gold-light"></span> de
+          <span id="toast-city"></span>
+        </p>
+        <p class="text-gray-400 text-xs mt-1">Acabou de agendar uma sessão</p>
+      </div>
     </div>
 
     <!-- MODAL VÍDEO -->
-    <div id="videoModal" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closeVideoModal()"></div>
-        <div class="bg-wine-dark border border-gold-DEFAULT/30 w-full max-w-lg mx-4 rounded-3xl p-1 relative z-10 shadow-[0_0_50px_rgba(200,138,88,0.2)] transform scale-95 transition-transform duration-300 overflow-hidden" id="videoModalContent">
-            <button onclick="closeVideoModal()" class="absolute top-4 right-4 z-20 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-wine transition-colors border border-white/10">
-                <i class="fa-solid fa-xmark text-xl"></i>
-            </button>
-            <video id="modalVideoPlayer" class="w-full h-auto max-h-[80vh] rounded-[22px] object-contain bg-black" controls playsinline preload="none">
-                <source src="/files/e432f8df-6cf1-4566-aeef-bc659223bb34_video.mp4" type="video/mp4">
-            </video>
-        </div>
+    <div
+      id="videoModal"
+      class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300"
+    >
+      <div
+        class="absolute inset-0 bg-black/90 backdrop-blur-md"
+        onclick="closeVideoModal()"
+      ></div>
+      <div
+        class="bg-wine-dark border border-gold-DEFAULT/30 w-full max-w-lg mx-4 rounded-3xl p-1 relative z-10 shadow-[0_0_50px_rgba(200,138,88,0.2)] transform scale-95 transition-transform duration-300 overflow-hidden"
+        id="videoModalContent"
+      >
+        <button
+          onclick="closeVideoModal()"
+          class="absolute top-4 right-4 z-20 w-10 h-10 bg-black/50 rounded-full flex items-center justify-center text-gray-300 hover:text-white hover:bg-wine transition-colors border border-white/10"
+        >
+          <i class="fa-solid fa-xmark text-xl"></i>
+        </button>
+        <video
+          id="modalVideoPlayer"
+          class="w-full h-auto max-h-[80vh] rounded-[22px] object-contain bg-black"
+          controls
+          playsinline
+          preload="none"
+        >
+          <source
+            src="/files/e432f8df-6cf1-4566-aeef-bc659223bb34_video.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
     </div>
 
     <!-- MODAL BIO IVELICE -->
-    <div id="bioModal" class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
-        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closeBioModal()"></div>
-        <div class="bg-wine-dark border border-gold-DEFAULT/30 w-full max-w-lg mx-4 rounded-2xl p-8 relative z-10 shadow-[0_0_50px_rgba(200,138,88,0.2)] transform scale-95 transition-transform duration-300" id="bioModalContent">
-            <button onclick="closeBioModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors">
-                <i class="fa-solid fa-xmark text-2xl"></i>
-            </button>
-            
-            <div class="flex items-center gap-6 mb-6">
-                <img src="https://i.postimg.cc/2S0ZGn5Y/Whats-App-Image-2026-08-17-at-14-49-20.jpg" alt="Ivelice Gleyce" class="w-24 h-24 rounded-full object-cover border-2 border-gold-DEFAULT shadow-lg">
-                <div>
-                    <h3 class="font-heading text-2xl font-bold text-white italic">Ivelice Gleyce</h3>
-                    <div class="inline-flex items-center gap-2 mt-1 bg-gold-DEFAULT/10 border border-gold-DEFAULT/30 px-3 py-1 rounded-full">
-                        <i class="fa-solid fa-gem text-gold-DEFAULT text-xs"></i>
-                        <span class="text-gold-light text-xs font-bold uppercase tracking-wider">Expert em Radiestesia</span>
-                    </div>
-                </div>
+    <div
+      id="bioModal"
+      class="fixed inset-0 z-[100] flex items-center justify-center hidden opacity-0 transition-opacity duration-300"
+    >
+      <div
+        class="absolute inset-0 bg-black/80 backdrop-blur-sm"
+        onclick="closeBioModal()"
+      ></div>
+      <div
+        class="bg-wine-dark border border-gold-DEFAULT/30 w-full max-w-lg mx-4 rounded-2xl p-8 relative z-10 shadow-[0_0_50px_rgba(200,138,88,0.2)] transform scale-95 transition-transform duration-300"
+        id="bioModalContent"
+      >
+        <button
+          onclick="closeBioModal()"
+          class="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+        >
+          <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+
+        <div class="flex items-center gap-6 mb-6">
+          <img
+            src="https://i.postimg.cc/2S0ZGn5Y/Whats-App-Image-2026-08-17-at-14-49-20.jpg"
+            alt="Ivelice Gleyce"
+            class="w-24 h-24 rounded-full object-cover border-2 border-gold-DEFAULT shadow-lg"
+          />
+          <div>
+            <h3 class="font-heading text-2xl font-bold text-white italic">
+              Ivelice Gleyce
+            </h3>
+            <div
+              class="inline-flex items-center gap-2 mt-1 bg-gold-DEFAULT/10 border border-gold-DEFAULT/30 px-3 py-1 rounded-full"
+            >
+              <i class="fa-solid fa-gem text-gold-DEFAULT text-xs"></i>
+              <span
+                class="text-gold-light text-xs font-bold uppercase tracking-wider"
+                >Expert em Radiestesia</span
+              >
             </div>
-            
-            <div class="space-y-4 text-gray-300 text-sm leading-relaxed">
-                <p>
-                    Conhecida como <strong>A Cientista Energética</strong>, Ivelice Gleyce dedica-se a decodificar as frequências invisíveis que ditam o sucesso ou a estagnação de ambientes corporativos.
-                </p>
-                <p>
-                    Através da Radiestesia Avançada e da aplicação do Gráfico das 36 Forças de Félix Servranx, ela desenvolveu uma metodologia cirúrgica. Seu trabalho não é sobre misticismo, mas sobre <strong>física vibracional aplicada a negócios</strong> — diagnosticando bloqueios e redirecionando o fluxo de prosperidade de maneira prática e mensurável.
-                </p>
-                <p>
-                    Hoje, ela orienta dezenas de empresários a transformarem suas lojas, clínicas e agências em verdadeiros polos magnéticos de atração e crescimento sustentável.
-                </p>
-            </div>
+          </div>
         </div>
+
+        <div class="space-y-4 text-gray-300 text-sm leading-relaxed">
+          <p>
+            Conhecida como <strong>A Cientista Energética</strong>, Ivelice
+            Gleyce dedica-se a decodificar as frequências invisíveis que ditam o
+            sucesso ou a estagnação de ambientes corporativos.
+          </p>
+          <p>
+            Através da Radiestesia Avançada e da aplicação do Gráfico das 36
+            Forças de Félix Servranx, ela desenvolveu uma metodologia cirúrgica.
+            Seu trabalho não é sobre misticismo, mas sobre
+            <strong>física vibracional aplicada a negócios</strong> —
+            diagnosticando bloqueios e redirecionando o fluxo de prosperidade de
+            maneira prática e mensurável.
+          </p>
+          <p>
+            Hoje, ela orienta dezenas de empresários a transformarem suas lojas,
+            clínicas e agências em verdadeiros polos magnéticos de atração e
+            crescimento sustentável.
+          </p>
+        </div>
+      </div>
     </div>
 
     <!-- Intersection Observer Script for Reveal Animations -->
     <script>
-        // Video Modal functions
-        function openVideoModal() {
-            const modal = document.getElementById('videoModal');
-            const content = document.getElementById('videoModalContent');
-            const video = document.getElementById('modalVideoPlayer');
-            
-            modal.classList.remove('hidden');
-            // Trigger reflow
-            void modal.offsetWidth;
-            
-            modal.classList.remove('opacity-0');
-            modal.classList.add('opacity-100');
-            content.classList.remove('scale-95');
-            content.classList.add('scale-100');
-            
-            // Auto play when opened
-            if(video) video.play();
-        }
+      // Video Modal functions
+      function openVideoModal() {
+        const modal = document.getElementById("videoModal");
+        const content = document.getElementById("videoModalContent");
+        const video = document.getElementById("modalVideoPlayer");
 
-        function closeVideoModal() {
-            const modal = document.getElementById('videoModal');
-            const content = document.getElementById('videoModalContent');
-            const video = document.getElementById('modalVideoPlayer');
-            
-            modal.classList.remove('opacity-100');
-            modal.classList.add('opacity-0');
-            content.classList.remove('scale-100');
-            content.classList.add('scale-95');
-            
-            // Pause video and reset time
-            if(video) {
-                video.pause();
-                video.currentTime = 0;
-            }
-            
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
+        modal.classList.remove("hidden");
+        // Trigger reflow
+        void modal.offsetWidth;
 
-        // Bio Modal functions
-        function openBioModal() {
-            const modal = document.getElementById('bioModal');
-            const content = document.getElementById('bioModalContent');
-            modal.classList.remove('hidden');
-            // Trigger reflow
-            void modal.offsetWidth;
-            modal.classList.remove('opacity-0');
-            content.classList.remove('scale-95');
-            document.body.style.overflow = 'hidden'; // prevent scrolling
-        }
+        modal.classList.remove("opacity-0");
+        modal.classList.add("opacity-100");
+        content.classList.remove("scale-95");
+        content.classList.add("scale-100");
 
-        function closeBioModal() {
-            const modal = document.getElementById('bioModal');
-            const content = document.getElementById('bioModalContent');
-            modal.classList.add('opacity-0');
-            content.classList.add('scale-95');
-            document.body.style.overflow = 'auto'; // restore scrolling
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
-
-        // Testimonials Carousel Script
-        document.addEventListener('DOMContentLoaded', () => {
-            const track = document.getElementById('testimonial-track');
-            if (!track) return;
-            
-            let currentIndex = 0;
-            const items = track.children;
-            const totalItems = items.length;
-            
-            function moveCarousel() {
-                // Determine how many items are visible based on screen width
-                const visibleItems = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
-                const maxIndex = totalItems - visibleItems;
-                
-                currentIndex++;
-                if (currentIndex > maxIndex) {
-                    currentIndex = 0; // Reset to start
-                }
-                
-                // Get the width of a single item including its gap
-                // The gap is 2rem (32px) as defined by Tailwind gap-8
-                const itemWidth = items[0].offsetWidth;
-                const offset = currentIndex * (itemWidth + 32);
-                
-                track.style.transform = `translateX(-${offset}px)`;
-            }
-
-            // Move every 3 seconds
-            let carouselInterval = setInterval(moveCarousel, 3000);
-
-            // Optional: Pause on hover
-            track.addEventListener('mouseenter', () => clearInterval(carouselInterval));
-            track.addEventListener('mouseleave', () => {
-                carouselInterval = setInterval(moveCarousel, 3000);
+        // Auto play when opened
+        if (video) {
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise.catch((error) => {
+              // ignore play/pause interruption error
             });
-            
-            // Adjust on resize
-            window.addEventListener('resize', () => {
-                currentIndex = 0;
-                track.style.transform = `translateX(0px)`;
-            });
+          }
+        }
+      }
+
+      function closeVideoModal() {
+        const modal = document.getElementById("videoModal");
+        const content = document.getElementById("videoModalContent");
+        const video = document.getElementById("modalVideoPlayer");
+
+        modal.classList.remove("opacity-100");
+        modal.classList.add("opacity-0");
+        content.classList.remove("scale-100");
+        content.classList.add("scale-95");
+
+        // Pause video and reset time
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      }
+
+      // Bio Modal functions
+      function openBioModal() {
+        const modal = document.getElementById("bioModal");
+        const content = document.getElementById("bioModalContent");
+        modal.classList.remove("hidden");
+        // Trigger reflow
+        void modal.offsetWidth;
+        modal.classList.remove("opacity-0");
+        content.classList.remove("scale-95");
+        document.body.style.overflow = "hidden"; // prevent scrolling
+      }
+
+      function closeBioModal() {
+        const modal = document.getElementById("bioModal");
+        const content = document.getElementById("bioModalContent");
+        modal.classList.add("opacity-0");
+        content.classList.add("scale-95");
+        document.body.style.overflow = "auto"; // restore scrolling
+        setTimeout(() => {
+          modal.classList.add("hidden");
+        }, 300);
+      }
+
+      // Testimonials Carousel Script
+      document.addEventListener("DOMContentLoaded", () => {
+        const track = document.getElementById("testimonial-track");
+        if (!track) return;
+
+        let currentIndex = 0;
+        const items = track.children;
+        const totalItems = items.length;
+
+        function moveCarousel() {
+          // Determine how many items are visible based on screen width
+          const visibleItems =
+            window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+          const maxIndex = totalItems - visibleItems;
+
+          currentIndex++;
+          if (currentIndex > maxIndex) {
+            currentIndex = 0; // Reset to start
+          }
+
+          // Get the width of a single item including its gap
+          // The gap is 2rem (32px) as defined by Tailwind gap-8
+          const itemWidth = items[0].offsetWidth;
+          const offset = currentIndex * (itemWidth + 32);
+
+          track.style.transform = `translateX(-${offset}px)`;
+        }
+
+        // Move every 2 seconds
+        let carouselInterval = setInterval(moveCarousel, 2000);
+
+        // Optional: Pause on hover
+        track.addEventListener("mouseenter", () =>
+          clearInterval(carouselInterval),
+        );
+        track.addEventListener("mouseleave", () => {
+          carouselInterval = setInterval(moveCarousel, 3000);
         });
 
-        // FAQ Accordion Script
-        function toggleFaq(button) {
-            const answer = button.nextElementSibling;
-            const icon = button.querySelector('i');
-            
-            // Fechar todos os outros FAQs abertos
-            const allAnswers = document.querySelectorAll('.faq-answer');
-            const allIcons = document.querySelectorAll('.faq-button i');
-            
-            allAnswers.forEach((ans, index) => {
-                if (ans !== answer && ans.style.maxHeight) {
-                    ans.style.maxHeight = null;
-                    allIcons[index].classList.remove('rotate-180');
-                }
-            });
+        // Adjust on resize
+        window.addEventListener("resize", () => {
+          currentIndex = 0;
+          track.style.transform = `translateX(0px)`;
+        });
+      });
 
-            // Alternar o FAQ atual
-            if (answer.style.maxHeight) {
-                answer.style.maxHeight = null;
-                icon.classList.remove('rotate-180');
-            } else {
-                answer.style.maxHeight = answer.scrollHeight + "px";
-                icon.classList.add('rotate-180');
+      // FAQ Search Script
+      function filterFaq() {
+        const input = document.getElementById("faqSearchInput");
+        const filter = input.value.toLowerCase();
+        const faqContainer = document.getElementById("faqContainer");
+        const panels = faqContainer.getElementsByClassName("glass-panel");
+
+        for (let i = 0; i < panels.length; i++) {
+          const question =
+            panels[i].querySelector(".faq-button span").textContent ||
+            panels[i].querySelector(".faq-button span").innerText;
+          const answer =
+            panels[i].querySelector(".faq-answer .p-6").textContent ||
+            panels[i].querySelector(".faq-answer .p-6").innerText;
+
+          if (
+            question.toLowerCase().indexOf(filter) > -1 ||
+            answer.toLowerCase().indexOf(filter) > -1
+          ) {
+            panels[i].style.display = "";
+          } else {
+            panels[i].style.display = "none";
+          }
+        }
+      }
+
+      // FAQ Accordion Script
+      function toggleFaq(button) {
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector("i");
+
+        // Fechar todos os outros FAQs abertos
+        const allAnswers = document.querySelectorAll(".faq-answer");
+        const allIcons = document.querySelectorAll(".faq-button i");
+
+        allAnswers.forEach((ans, index) => {
+          if (ans !== answer && ans.style.maxHeight) {
+            ans.style.maxHeight = null;
+            allIcons[index].classList.remove("rotate-180");
+          }
+        });
+
+        // Alternar o FAQ atual
+        if (answer.style.maxHeight) {
+          answer.style.maxHeight = null;
+          icon.classList.remove("rotate-180");
+        } else {
+          answer.style.maxHeight = answer.scrollHeight + "px";
+          icon.classList.add("rotate-180");
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Setup Intersection Observer for Reveal Animations
+        const observerOptions = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.15,
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              observer.unobserve(entry.target);
             }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll(".reveal").forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Countdown Timer Script (2 hours duration from first load)
+        const hoursEl = document.getElementById("cd-hours");
+        const minutesEl = document.getElementById("cd-minutes");
+        const secondsEl = document.getElementById("cd-seconds");
+
+        if (hoursEl && minutesEl && secondsEl) {
+          // Set countdown duration to 2 hours (7200 seconds)
+          let duration = 2 * 60 * 60;
+
+          // Check if there is a saved end time in localStorage
+          let endTime = localStorage.getItem("offerEndTime");
+          const now = Math.floor(Date.now() / 1000);
+
+          if (!endTime || now > parseInt(endTime)) {
+            // Reset or set initial timer
+            endTime = now + duration;
+            localStorage.setItem("offerEndTime", endTime);
+          }
+
+          function updateCountdown() {
+            const currentTime = Math.floor(Date.now() / 1000);
+            let timeLeft = parseInt(endTime) - currentTime;
+
+            if (timeLeft <= 0) {
+              // Reset timer if it hits 0 (to keep the offer "evergreen")
+              endTime = currentTime + duration;
+              localStorage.setItem("offerEndTime", endTime);
+              timeLeft = duration;
+            }
+
+            const h = Math.floor(timeLeft / 3600);
+            const m = Math.floor((timeLeft % 3600) / 60);
+            const s = timeLeft % 60;
+
+            hoursEl.textContent = h.toString().padStart(2, "0");
+            minutesEl.textContent = m.toString().padStart(2, "0");
+            secondsEl.textContent = s.toString().padStart(2, "0");
+          }
+
+          updateCountdown(); // Call immediately to avoid initial jump
+          setInterval(updateCountdown, 1000);
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Setup Intersection Observer for Reveal Animations
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
+        // Social Proof Toast Logic
+        const toast = document.getElementById("social-proof-toast");
+        const toastName = document.getElementById("toast-name");
+        const toastCity = document.getElementById("toast-city");
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
+        if (toast && toastName && toastCity) {
+          const names = [
+            "Ana P.",
+            "Carlos M.",
+            "Fernanda L.",
+            "Roberto C.",
+            "Juliana S.",
+            "Camila T.",
+            "Tiago V.",
+            "Amanda R.",
+            "Diego F.",
+          ];
+          const cities = [
+            "São Paulo, SP",
+            "Rio de Janeiro, RJ",
+            "Belo Horizonte, MG",
+            "Curitiba, PR",
+            "Brasília, DF",
+            "Salvador, BA",
+            "Porto Alegre, RS",
+            "Campinas, SP",
+            "Goiânia, GO",
+          ];
 
-            document.querySelectorAll('.reveal').forEach((el) => {
-                observer.observe(el);
-            });
+          function showToast() {
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomCity =
+              cities[Math.floor(Math.random() * cities.length)];
 
-            // Countdown Timer Script (2 hours duration from first load)
-            const hoursEl = document.getElementById('cd-hours');
-            const minutesEl = document.getElementById('cd-minutes');
-            const secondsEl = document.getElementById('cd-seconds');
+            toastName.textContent = randomName;
+            toastCity.textContent = randomCity;
 
-            if (hoursEl && minutesEl && secondsEl) {
-                // Set countdown duration to 2 hours (7200 seconds)
-                let duration = 2 * 60 * 60; 
-                
-                // Check if there is a saved end time in localStorage
-                let endTime = localStorage.getItem('offerEndTime');
-                const now = Math.floor(Date.now() / 1000);
+            // Show toast
+            toast.classList.remove("opacity-0", "translate-y-4");
+            toast.classList.add("opacity-100", "translate-y-0");
 
-                if (!endTime || now > parseInt(endTime)) {
-                    // Reset or set initial timer
-                    endTime = now + duration;
-                    localStorage.setItem('offerEndTime', endTime);
-                }
+            // Hide after 5 seconds
+            setTimeout(() => {
+              toast.classList.remove("opacity-100", "translate-y-0");
+              toast.classList.add("opacity-0", "translate-y-4");
+            }, 5000);
+          }
 
-                function updateCountdown() {
-                    const currentTime = Math.floor(Date.now() / 1000);
-                    let timeLeft = parseInt(endTime) - currentTime;
-
-                    if (timeLeft <= 0) {
-                        // Reset timer if it hits 0 (to keep the offer "evergreen")
-                        endTime = currentTime + duration;
-                        localStorage.setItem('offerEndTime', endTime);
-                        timeLeft = duration;
-                    }
-
-                    const h = Math.floor(timeLeft / 3600);
-                    const m = Math.floor((timeLeft % 3600) / 60);
-                    const s = timeLeft % 60;
-
-                    hoursEl.textContent = h.toString().padStart(2, '0');
-                    minutesEl.textContent = m.toString().padStart(2, '0');
-                    secondsEl.textContent = s.toString().padStart(2, '0');
-                }
-
-                updateCountdown(); // Call immediately to avoid initial jump
-                setInterval(updateCountdown, 1000);
-            }
-
-            // Social Proof Toast Logic
-            const toast = document.getElementById('social-proof-toast');
-            const toastName = document.getElementById('toast-name');
-            const toastCity = document.getElementById('toast-city');
-            
-            if (toast && toastName && toastCity) {
-                const names = ['Ana P.', 'Carlos M.', 'Fernanda L.', 'Roberto C.', 'Juliana S.', 'Camila T.', 'Tiago V.', 'Amanda R.', 'Diego F.'];
-                const cities = ['São Paulo, SP', 'Rio de Janeiro, RJ', 'Belo Horizonte, MG', 'Curitiba, PR', 'Brasília, DF', 'Salvador, BA', 'Porto Alegre, RS', 'Campinas, SP', 'Goiânia, GO'];
-                
-                function showToast() {
-                    const randomName = names[Math.floor(Math.random() * names.length)];
-                    const randomCity = cities[Math.floor(Math.random() * cities.length)];
-                    
-                    toastName.textContent = randomName;
-                    toastCity.textContent = randomCity;
-
-                    // Show toast
-                    toast.classList.remove('opacity-0', 'translate-y-4');
-                    toast.classList.add('opacity-100', 'translate-y-0');
-
-                    // Hide after 5 seconds
-                    setTimeout(() => {
-                        toast.classList.remove('opacity-100', 'translate-y-0');
-                        toast.classList.add('opacity-0', 'translate-y-4');
-                    }, 5000);
-                }
-
-                // Initial delay before first toast (e.g., 8s)
-                setTimeout(() => {
-                    showToast();
-                    // Then show a new toast randomly between 15-25 seconds
-                    setInterval(showToast, Math.floor(Math.random() * 10000) + 15000);
-                }, 8000);
-            }
-        });
+          // Initial delay before first toast (e.g., 8s)
+          setTimeout(() => {
+            showToast();
+            // Then show a new toast randomly between 15-25 seconds
+            setInterval(showToast, Math.floor(Math.random() * 10000) + 15000);
+          }, 8000);
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
